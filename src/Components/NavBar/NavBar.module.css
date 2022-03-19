@@ -1,0 +1,26 @@
+.container {
+  position: fixed;
+  display: flex;
+  height: 10vh;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: #000;
+}
+
+.logo {
+  height: 5rem;
+  width: 5rem;
+
+  transition: all 0.5s;
+}
+
+.logo:hover {
+  opacity: 70%;
+}
