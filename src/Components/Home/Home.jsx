@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./Home.module.css";
+import Spline from "@splinetool/react-spline";
 
 function Home() {
   return (
     <div className={styles.container}>
-      <h1>Ramiro Fazio Dattoli</h1>
-      <h3>Full Stack Developer - Blockchain</h3>
+      <Spline scene="https://prod.spline.design/2AHCqNulxstC9agi/scene.splinecode" />
     </div>
   );
 }
