@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
-* {
-  font-family: 'Inter', sans-serif, 'Permanent Market', cursive;
+
+:root {
+  --baseColor: #F0EBCC;
+  --primaryColor: #3D84B8;
+  --secondaryColor: #344FA1;
+  
+  --primaryFont: 'Intern', sans-serif;
+  --secondaryFont: 'Permanent Marker', cursive;
+  
 }
+
 body {
   margin: 0;
   width: 100%;
