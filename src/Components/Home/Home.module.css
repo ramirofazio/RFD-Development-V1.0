@@ -1,5 +1,8 @@
-.container {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
+
+.h1 {
+  font-family: var(--principalFont);
+}
+
+.p {
+  font-family: var(--secondaryFont);
 }

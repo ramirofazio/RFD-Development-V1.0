@@ -1,12 +1,19 @@
 import React from "react";
+import { Container } from "../../styles/globalStyles.js";
 import styles from "./Home.module.css";
-import Spline from "@splinetool/react-spline";
+//import Spline from "@splinetool/react-spline";
 
 function Home() {
   return (
-    <div className={styles.container}>
-      <Spline scene="https://prod.spline.design/2AHCqNulxstC9agi/scene.splinecode" />
-    </div>
+    <Container>
+      <div>
+        <h1 className={styles.h1}>
+          Hello, im
+          <p className={styles.p}>Ramiro Fazio Dattoli</p>
+          im a Full stack web developer
+        </h1>
+      </div>
+    </Container>
   );
 }
 
