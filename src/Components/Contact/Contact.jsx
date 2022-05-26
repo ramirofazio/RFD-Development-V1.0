@@ -21,25 +21,40 @@ function Contact() {
   };
 
   return (
-    <form
-      ref={form}
-      onSubmit={sendEmail}
+    <div
       style={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
       }}
     >
-      <label>Full Name</label>
-      <input type="text" name="clientFullName" />
-      <label>Email</label>
-      <input type="email" name="clientEmail" />
-      <label>Celphone</label>
-      <input type="number" name="clientCelphone" />
-      <label>Message</label>
-      <textarea name="clientMessage" />
-      <input type="submit" value="Send" />
-    </form>
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <label>Full Name</label>
+        <input type="text" name="clientFullName" />
+        <label>Email</label>
+        <input type="email" name="clientEmail" />
+        <label>Celphone</label>
+        <input type="number" name="clientCelphone" />
+        <label>Message</label>
+        <textarea name="clientMessage" />
+        <input type="submit" value="Send" />
+      </form>
+      <a
+        href="https://calendly.com/ramifazio/30min"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <button>calendly</button>
+      </a>
+    </div>
   );
 }
 
