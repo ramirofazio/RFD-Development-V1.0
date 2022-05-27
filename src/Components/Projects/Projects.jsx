@@ -1,11 +1,17 @@
-import React from 'react';
+import React from "react";
+import { projectsData } from "./projectsData";
+import Project from "./Project";
 
-function Projects() {
-    return (
-        <div>
-            <h1>Projects</h1>
-        </div>
-    )
+export default function Projects() {
+  return (
+    <div>
+      {projectsData.map((p, index) => {
+        return (
+          <div key={index}>
+            <Project name={p.name} description={p.description} link={p.link} />
+          </div>
+        );
+      })}
+    </div>
+  );
 }
-
-export default Projects;
