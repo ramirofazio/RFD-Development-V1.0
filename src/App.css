@@ -1,24 +1,7 @@
 
-.home,
-.about,
-.projects,
+.home
+.about
+.projects
 .contact {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.home {
-  background-color: #F0EBCC;
-}
-.about {
-  background-color: blueviolet;
-}
-.projects {
-  background-color: brown;
-}
-.contact {
-  background-color: green;
+  background-color: var(--baseColor);
 }
