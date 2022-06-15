@@ -65,7 +65,7 @@ function Contact() {
         <img src="https://img.icons8.com/ios-glyphs/30/000000/linkedin-circled--v1.png" />
       </a>
       <a
-        href="https://drive.google.com/file/d/1HnXXhzaQ7C46LLt6I9_30wpWS5m5U-0y/view?usp=sharing"
+        href="https://drive.google.com/drive/folders/1VTwnR9GBwnugsJ0-q_TJK9cipyw7jh4c?usp=sharing"
         rel="noreferrer"
         target="_blank"
       >
