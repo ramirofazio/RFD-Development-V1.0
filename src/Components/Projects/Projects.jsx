@@ -15,13 +15,12 @@ export default function Projects() {
       >
         {projectsData.map((p, index) => {
           return (
-            <div key={index}>
-              <Project
-                name={p.name}
-                description={p.description}
-                link={p.link}
-              />
-            </div>
+            <Project
+              key={index}
+              name={p.name}
+              description={p.description}
+              link={p.link}
+            />
           );
         })}
       </Carousel>

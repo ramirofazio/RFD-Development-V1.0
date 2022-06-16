@@ -1,20 +1,42 @@
 import React from "react";
+import styled from "styled-components";
 import { StyledContainer } from "../../styles/globalStyles.js";
-import styles from "./Home.module.css";
-//import Spline from "@splinetool/react-spline";
 
 function Home() {
   return (
     <StyledContainer>
-      <div>
+      <Container>
         <div>
-          <h1 className={styles.h1}>Hello, im</h1>
-          <h1 className={styles.p}>Ramiro Fazio Dattoli</h1>
+          <Title>Hello, my name is</Title>
+          <Name>Ramiro Fazio Dattoli.</Name>
         </div>
-        <h1 className={styles.h1}>im a Full stack web developer</h1>
-      </div>
+        <Title>I buld thing for the web.</Title>
+      </Container>
     </StyledContainer>
   );
 }
 
 export default Home;
+
+const Container = styled.div`
+  width: 50%;
+  height: 40%;
+  outline: 1px solid red;
+`;
+
+const Title = styled.h1`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--secondaryColor);
+  font-family: var(--principalFont);
+  font-weight: 800;
+`;
+
+const Name = styled.h1`
+  margin-inline: 1rem;
+
+  color: var(--primaryDarkColor);
+  font-family: var(--secondaryFont);
+`;

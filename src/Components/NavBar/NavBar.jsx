@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./NavBar.module.css";
 import styled from "styled-components";
 import { StyledContainer } from "../../styles/globalStyles";
 import { scrollLinks } from "./scrollLinks.js";
@@ -9,13 +8,13 @@ function NavBar() {
   return (
     <ThisStyledContainer>
       <a href="#home">
-        <img src={logo} alt="" className={styles.logo} />
+        <Logo src={logo} alt="" />
       </a>
       {scrollLinks.map((link) => {
         return (
-          <a href={link.url} key={link.id} className={styles.homeLinks}>
+          <HomeLinks href={link.url} key={link.id}>
             {link.text}
-          </a>
+          </HomeLinks>
         );
       })}
     </ThisStyledContainer>
@@ -30,5 +29,29 @@ const ThisStyledContainer = styled(StyledContainer)`
 
   height: 10vh;
 
-  background-color: var(--primaryColor);
+  background-color: var(--baseColor);
+`;
+
+const Logo = styled.img`
+  height: 5rem;
+  width: 5rem;
+
+  transition: all 0.5s;
+
+  &:hover {
+    opacity: 70%;
+  }
+`;
+
+const HomeLinks = styled.a`
+  text-decoration: none;
+  font-size: 2rem;
+  color: var(--primaryColor);
+
+  transition: all 0.5s;
+
+  &:hover {
+    opacity: 70%;
+    color: var(--secondaryColor);
+  }
 `;
