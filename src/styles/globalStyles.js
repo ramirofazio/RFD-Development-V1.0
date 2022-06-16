@@ -7,6 +7,8 @@ export const StyledContainer = styled.div`
 
     width: 100%;
     height: 100vh;
+
+    background-color: var(--baseColor);
 `;
 
 export const StyledCarouselContainer = styled.div`
