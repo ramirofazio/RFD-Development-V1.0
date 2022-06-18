@@ -5,38 +5,43 @@ import { StyledContainer } from "../../styles/globalStyles.js";
 function Home() {
   return (
     <StyledContainer>
-      <Container>
-        <div>
-          <Title>Hello, my name is</Title>
-          <Name>Ramiro Fazio Dattoli.</Name>
-        </div>
-        <Title>I buld thing for the web.</Title>
-      </Container>
+      <SubContainer>
+        <Intro>Hi, my name is</Intro>
+        <Name>Ramiro Fazio Dattoli.</Name>
+        <P>I build thing for the web.</P>
+      </SubContainer>
     </StyledContainer>
   );
 }
 
 export default Home;
 
-const Container = styled.div`
-  width: 50%;
-  height: 40%;
-  outline: 1px solid red;
+const SubContainer = styled.div`
+  padding: 50px;
 `;
 
-const Title = styled.h1`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+const Intro = styled.h1`
+  margin: 0;
   color: var(--secondaryColor);
   font-family: var(--principalFont);
-  font-weight: 800;
+  font-weight: 200;
+  font-size: 1.5rem;
 `;
 
 const Name = styled.h1`
-  margin-inline: 1rem;
-
-  color: var(--primaryDarkColor);
+  color: var(--primaryColor);
   font-family: var(--secondaryFont);
+  font-size: 4.5rem;
+  margin: 0;
+
+  transition: all 3s ease;
+  &:hover {
+    color: var(--secondaryColor);
+  }
+`;
+
+const P = styled(Intro)`
+  margin: 0;
+  color: var(--primaryDarkColor);
+  font-size: 3rem;
 `;
