@@ -3,27 +3,29 @@ import styled, { css } from "styled-components";
 import { StyledContainer } from "../../styles/globalStyles";
 import { scrollLinks } from "./scrollLinks.js";
 import logo from "../../Assets/LOGO_FINAL1.png";
+import { useScrollDirection } from "../../hooks/index";
 
 function NavBar() {
-  const [show, setShow] = useState(null);
+  const scrollDirection = useScrollDirection("down");
+  const [scrolledToTop, setScrolledToTop] = useState(true);
 
-  const controlNavbar = () => {
-    if (window.scrollY > 150) {
-      setShow("hide");
-    } else {
-      setShow(null);
-    }
+  const handleScroll = () => {
+    setScrolledToTop(window.pageYOffset < 50);
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", controlNavbar);
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
-      window.removeEventListener("scroll", controlNavbar);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <NavBarContainer show={show}>
+    <NavBarContainer
+      scrollDirection={scrollDirection}
+      scrolledToTop={scrolledToTop}
+    >
       <a href="#home">
         <Logo src={logo} alt="" />
       </a>
@@ -41,32 +43,32 @@ function NavBar() {
 export default NavBar;
 
 const NavBarContainer = styled(StyledContainer)`
-  ${(props) => {
-    switch (props.show) {
-      case "hide":
-        return css`
-          position: fixed;
-          justify-content: space-around;
+  position: fixed;
+  justify-content: space-around;
 
-          height: 4rem;
+  height: 4rem;
 
-          background-color: var(--baseColor);
-          transform: translateY(-4rem);
-          transition: transform 1s ease;
-        `;
-      default:
-        return css`
-          position: fixed;
-          justify-content: space-around;
+  background-color: var(--baseColor);
 
-          height: 4rem;
+  ${(props) =>
+    props.scrollDirection === "up" &&
+    !props.scrolledToTop &&
+    css`
+      height: 4rem;
+      transform: translateY(0px);
+      transition: transform 0.5s ease;
 
-          background-color: var(--baseColor);
+      border
+    `};
 
-          transition: all 1s ease;
-        `;
-    }
-  }}
+  ${(props) =>
+    props.scrollDirection === "down" &&
+    !props.scrolledToTop &&
+    css`
+      height: var(--nav-scroll-height);
+      transform: translateY(-4rem);
+      transition: transform 0.5s ease;
+    `};
 `;
 
 const Logo = styled.img`
