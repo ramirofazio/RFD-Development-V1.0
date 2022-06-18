@@ -1,12 +1,29 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from "react";
+import styled, { css } from "styled-components";
 import { StyledContainer } from "../../styles/globalStyles";
 import { scrollLinks } from "./scrollLinks.js";
 import logo from "../../Assets/LOGO_FINAL1.png";
 
 function NavBar() {
+  const [show, setShow] = useState(null);
+
+  const controlNavbar = () => {
+    if (window.scrollY > 150) {
+      setShow("hide");
+    } else {
+      setShow(null);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, []);
+
   return (
-    <ThisStyledContainer>
+    <NavBarContainer show={show}>
       <a href="#home">
         <Logo src={logo} alt="" />
       </a>
@@ -17,24 +34,44 @@ function NavBar() {
           </HomeLinks>
         );
       })}
-    </ThisStyledContainer>
+    </NavBarContainer>
   );
 }
 
 export default NavBar;
 
-const ThisStyledContainer = styled(StyledContainer)`
-  position: fixed;
-  justify-content: space-around;
+const NavBarContainer = styled(StyledContainer)`
+  ${(props) => {
+    switch (props.show) {
+      case "hide":
+        return css`
+          position: fixed;
+          justify-content: space-around;
 
-  height: 10vh;
+          height: 4rem;
 
-  background-color: var(--baseColor);
+          background-color: var(--baseColor);
+          transform: translateY(-4rem);
+          transition: transform 1s ease;
+        `;
+      default:
+        return css`
+          position: fixed;
+          justify-content: space-around;
+
+          height: 4rem;
+
+          background-color: var(--baseColor);
+
+          transition: all 1s ease;
+        `;
+    }
+  }}
 `;
 
 const Logo = styled.img`
-  height: 5rem;
-  width: 5rem;
+  height: 3rem;
+  width: 3rem;
 
   transition: all 0.5s;
 
@@ -45,7 +82,7 @@ const Logo = styled.img`
 
 const HomeLinks = styled.a`
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--primaryColor);
 
   transition: all 0.5s;

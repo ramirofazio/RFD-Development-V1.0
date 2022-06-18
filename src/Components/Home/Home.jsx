@@ -8,7 +8,7 @@ function Home() {
       <SubContainer>
         <Intro>Hi, my name is</Intro>
         <Name>Ramiro Fazio Dattoli.</Name>
-        <P>I buld thing for the web.</P>
+        <P>I build thing for the web.</P>
       </SubContainer>
     </StyledContainer>
   );
