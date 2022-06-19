@@ -1,48 +1,16 @@
 import React, { useState, useEffect } from "react";
-import styled, { css } from "styled-components";
-import { StyledContainer } from "../../styles/globalStyles";
 import { scrollLinks } from "./scrollLinks.js";
-import logo from "../../Assets/LOGO_FINAL1.png";
 import { useScrollDirection } from "../../hooks/index";
+import logo from "../../Assets/LOGO_FINAL1.png";
+import styled, { css } from "styled-components";
 
-function NavBar() {
-  const scrollDirection = useScrollDirection("down");
-  const [scrolledToTop, setScrolledToTop] = useState(true);
-
-  const handleScroll = () => {
-    setScrolledToTop(window.pageYOffset < 50);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  return (
-    <NavBarContainer
-      scrollDirection={scrollDirection}
-      scrolledToTop={scrolledToTop}
-    >
-      <a href="#home">
-        <Logo src={logo} alt="" />
-      </a>
-      {scrollLinks.map((link) => {
-        return (
-          <HomeLinks href={link.url} key={link.id}>
-            {link.text}
-          </HomeLinks>
-        );
-      })}
-    </NavBarContainer>
-  );
-}
-
-export default NavBar;
-
-const NavBarContainer = styled(StyledContainer)`
+const NavBarContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--baseColor);
   position: fixed;
   justify-content: space-around;
 
@@ -94,3 +62,40 @@ const HomeLinks = styled.a`
     color: var(--secondaryColor);
   }
 `;
+
+function NavBar() {
+  const scrollDirection = useScrollDirection("down");
+  const [scrolledToTop, setScrolledToTop] = useState(true);
+
+  const handleScroll = () => {
+    setScrolledToTop(window.pageYOffset < 50);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <NavBarContainer
+      scrollDirection={scrollDirection}
+      scrolledToTop={scrolledToTop}
+    >
+      <a href="#home">
+        <Logo src={logo} alt="" />
+      </a>
+      {scrollLinks.map((link) => {
+        return (
+          <HomeLinks href={link.url} key={link.id}>
+            {link.text}
+          </HomeLinks>
+        );
+      })}
+    </NavBarContainer>
+  );
+}
+
+export default NavBar;

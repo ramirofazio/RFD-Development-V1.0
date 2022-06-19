@@ -1,20 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { StyledContainer } from "../../styles/globalStyles.js";
+import mixins from "../../styles/mixins";
 
-function Home() {
-  return (
-    <StyledContainer>
-      <SubContainer>
-        <Intro>Hi, my name is</Intro>
-        <Name>Ramiro Fazio Dattoli.</Name>
-        <P>I build thing for the web.</P>
-      </SubContainer>
-    </StyledContainer>
-  );
-}
-
-export default Home;
+const StyledContainer = styled.div`
+  ${mixins.container}
+`;
 
 const SubContainer = styled.div`
   padding: 50px;
@@ -45,3 +35,17 @@ const P = styled(Intro)`
   color: var(--primaryDarkColor);
   font-size: 3rem;
 `;
+
+function Home() {
+  return (
+    <StyledContainer>
+      <SubContainer>
+        <Intro>Hi, my name is</Intro>
+        <Name>Ramiro Fazio Dattoli.</Name>
+        <P>I build thing for the web.</P>
+      </SubContainer>
+    </StyledContainer>
+  );
+}
+
+export default Home;
