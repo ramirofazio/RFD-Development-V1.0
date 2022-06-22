@@ -8,6 +8,11 @@ const StyledContainer = styled.div`
 
 const SubContainer = styled.div`
   padding: 50px;
+
+  &:hover {
+    cursor: default;
+  }
+  
 `;
 
 const Intro = styled.h1`
@@ -16,6 +21,9 @@ const Intro = styled.h1`
   font-family: var(--principalFont);
   font-weight: 200;
   font-size: 1.5rem;
+  &:hover {
+    cursor: default;
+  }
 `;
 
 const Name = styled.h1`
@@ -27,13 +35,18 @@ const Name = styled.h1`
   transition: all 3s ease;
   &:hover {
     color: var(--secondaryColor);
+    cursor: default;
   }
 `;
 
 const P = styled(Intro)`
   margin: 0;
   color: var(--primaryDarkColor);
-  font-size: 3rem;
+  font-size: 2.5rem;
+
+  &:hover {
+    cursor: default;
+  }
 `;
 
 function Home() {
@@ -42,7 +55,7 @@ function Home() {
       <SubContainer>
         <Intro>Hi, my name is</Intro>
         <Name>Ramiro Fazio Dattoli.</Name>
-        <P>I build thing for the web.</P>
+        <P>Developing high quality sofware </P>
       </SubContainer>
     </StyledContainer>
   );
