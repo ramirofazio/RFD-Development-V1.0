@@ -12,18 +12,18 @@ const StyledInputContainer = styled(StyledContainer)`
   width: 60%;
   height: 10%;
 
-  outline: 1px solid black;
+  outline: 1px solid green;
 `;
 
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 75%;
   height: 50%;
 
-  outline: 1px solid red;
+  outline: 1px solid pink;
 `;
 
 const StyledLabel = styled.label`
@@ -36,18 +36,59 @@ const StyledInput = styled.input`
   border-radius: 15px;
   text-align: center;
   background-color: var(--primaryColor);
+
+  &:focus {
+    border: none;
+    outline: none;
+    height: 50%;
+  }
+`;
+
+const StyledTextAreaContainer = styled(StyledInputContainer)`
+  outline: 1px solid red;
+
+  height: 30%;
 `;
 
 const StyledTextArea = styled.textarea`
+  width: 90%;
   max-width: 90%;
-  height: 50%;
+  min-width: 90%;
+  min-height: 40%;
   border-radius: 15px;
   text-align: center;
   background-color: var(--primaryColor);
 `;
 const StyledButton = styled.input`
-  background-color: var(--primaryDarkColor);
-  color: var(--primaryColor);
+  width: 20%;
+  height: 2rem;
+  border-radius: 5px;
+  border: 1.5px solid var(--primaryDarkColor);
+  background-color: var(--baseColor);
+  color: var(--primaryDarkColor);
+
+  transition: all 1.5s ease;
+  &:hover {
+    background-color: var(--primaryDarkColor);
+    color: var(--baseColor);
+    border: 1.5px solid var(--baseColor);
+  }
+`;
+
+const StyledCalendlyButton = styled.a`
+  width: 20%;
+  height: 2rem;
+  border-radius: 5px;
+  border: 1.5px solid var(--primaryDarkColor);
+  background-color: var(--baseColor);
+  color: var(--primaryDarkColor);
+
+  transition: all 1.5s ease;
+  &:hover {
+    background-color: var(--primaryDarkColor);
+    color: var(--baseColor);
+    border: 1.5px solid var(--baseColor);
+  }
 `;
 
 function Contact() {
@@ -74,29 +115,37 @@ function Contact() {
       <StyledForm ref={form} onSubmit={sendEmail}>
         <StyledInputContainer>
           <StyledLabel>Full Name</StyledLabel>
-          <StyledInput type="text" name="clientFullName" />
+          <StyledInput
+            type="text"
+            name="clientFullName"
+            placeholder="Full Name"
+          />
         </StyledInputContainer>
         <StyledInputContainer>
           <StyledLabel>Email</StyledLabel>
-          <StyledInput type="email" name="clientEmail" />
+          <StyledInput type="email" name="clientEmail" placeholder="Email" />
         </StyledInputContainer>
         <StyledInputContainer>
           <StyledLabel>Celphone</StyledLabel>
-          <StyledInput type="number" name="clientCelphone" />
+          <StyledInput
+            type="text"
+            name="clientCelphone"
+            placeholder="Celphone"
+          />
         </StyledInputContainer>
-        <StyledInputContainer>
+        <StyledTextAreaContainer>
           <StyledLabel>Message</StyledLabel>
-          <StyledTextArea name="clientMessage" />
-        </StyledInputContainer>
+          <StyledTextArea name="clientMessage" placeholder="Your Message" />
+        </StyledTextAreaContainer>
         <StyledButton type="submit" value="Send" />
       </StyledForm>
-      <a
+      <StyledCalendlyButton
         href="https://calendly.com/ramifazio/30min"
         rel="noreferrer"
         target="_blank"
       >
         <button>calendly</button>
-      </a>
+      </StyledCalendlyButton>
       <a href="https://github.com/ramirofazio" rel="noreferrer" target="_blank">
         <img src="https://img.icons8.com/material-outlined/24/000000/github.png" />
       </a>
