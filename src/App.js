@@ -4,7 +4,12 @@ import Home from './Components/Home/Home.jsx';
 import About from './Components/About/About.jsx';
 import Project from "./Components/Projects/Projects";
 import Contact from './Components/Contact/Contact.jsx';
-import { StyledContainer } from './styles/globalStyles'
+import styled from "styled-components";
+import mixins from "./styles/mixins.js";
+
+const StyledContainer = styled.div`
+${mixins.container}
+`
 
 function App() {
 

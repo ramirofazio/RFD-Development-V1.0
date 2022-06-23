@@ -1,21 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { StyledContainer, StyledLink } from "../../styles/globalStyles.js";
+import mixins from "../../styles/mixins";
 
-function Project({ name, description, link }) {
-  return (
-    <ThisStyledContainer>
-      <StyledLink href={link} target="_blank" rel="noreferrer">
-        <h1>{name}</h1>
-        <p>{description}</p>
-      </StyledLink>
-    </ThisStyledContainer>
-  );
-}
-
-export default Project;
-
-const ThisStyledContainer = styled(StyledContainer)`
+const StyledContainer = styled.div`
+  ${mixins.container}
   height: 50vh;
   width: 100%;
   margin: 1rem;
@@ -23,3 +11,20 @@ const ThisStyledContainer = styled(StyledContainer)`
   border: 3px solid var(--primaryColor);
   border-radius: 25px;
 `;
+
+const StyledLink = styled.a`
+  ${mixins.link}
+`;
+
+function Project({ name, description, link }) {
+  return (
+    <StyledContainer>
+      <StyledLink href={link} target="_blank" rel="noreferrer">
+        <h1>{name}</h1>
+        <p>{description}</p>
+      </StyledLink>
+    </StyledContainer>
+  );
+}
+
+export default Project;

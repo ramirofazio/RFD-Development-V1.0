@@ -2,7 +2,12 @@ import React from "react";
 import { projectsData } from "./projectsData";
 import Project from "./Project";
 import Carousel from "react-elastic-carousel";
-import { StyledCarouselContainer } from "../../styles/globalStyles";
+import styled from "styled-components";
+import mixins from "../../styles/mixins";
+
+const StyledCarouselContainer = styled.div`
+  ${mixins.carouselContainer}
+`;
 
 export default function Projects() {
   return (
