@@ -11,6 +11,7 @@ const StyledContainer = styled.div`
 const StyledProjectContainer = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 55%;
   height: 90vh;
   padding: 10px;
@@ -29,6 +30,7 @@ export default function Projects() {
               name={p.name}
               description={p.description}
               link={p.link}
+              usedTechnologies={p.usedTechnologies}
             />
           );
         })}
