@@ -5,16 +5,21 @@ import IconGitHub from "../icons/github";
 
 const StyledContainer = styled.div`
   ${mixins.container}
+  flex-direction: column;
   flex-wrap: wrap;
   height: 50%;
   width: 100%;
-  padding: 5px;
+  padding: 10px;
   align-content: space-around;
   margin-inline: 1rem;
   transition: all 0.5s ease-in;
   background-color: var(--baseLigthColor);
-
-  outline: 1px solid red;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 2px var(--secondaryColor);
+  }
 `;
 
 const StyledLink = styled.a`
@@ -22,20 +27,20 @@ const StyledLink = styled.a`
   width: 15%;
   height: 10%;
   color: var(--primaryDarkColor);
+  margin-top: 1rem;
 
   transition: all 1s ease;
   &:hover {
     color: var(--secondaryColor);
   }
-
-  outline: 1px solid pink;
 `;
 
 const StyledSubContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
   width: 100%;
-  height: 70%;
-
-  outline: 1px solid lightskyblue;
+  height: 60%;
 `;
 
 const StyledName = styled.h1`
@@ -60,8 +65,8 @@ function Project({ name, description, link, usedTechnologies }) {
       <StyledSubContainer>
         <StyledName>{name}</StyledName>
         <StyledDescription>{description}</StyledDescription>
-        <StyledTechnologies>{usedTechnologies}</StyledTechnologies>
       </StyledSubContainer>
+      <StyledTechnologies>{usedTechnologies}</StyledTechnologies>
       <StyledLink href={link} target="_blank" rel="noreferrer">
         <IconGitHub />
       </StyledLink>

@@ -15,8 +15,6 @@ const StyledProjectContainer = styled.div`
   width: 55%;
   height: 90vh;
   padding: 10px;
-
-  border: 1px solid green;
 `;
 
 export default function Projects() {
