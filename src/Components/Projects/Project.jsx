@@ -9,7 +9,7 @@ const StyledContainer = styled.div`
   flex-wrap: wrap;
   height: 50%;
   width: 100%;
-  padding: 10px;
+  padding: 15px;
   align-content: space-around;
   margin-inline: 1rem;
   transition: all 0.5s ease-in;
@@ -18,7 +18,7 @@ const StyledContainer = styled.div`
   transition: all 0.3s ease-in-out;
   &:hover {
     transform: translateY(-10px);
-    box-shadow: 0px 10px 2px var(--secondaryColor);
+    box-shadow: 0px 10px 1px var(--secondaryColor);
   }
 `;
 
