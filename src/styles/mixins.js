@@ -21,7 +21,6 @@ const mixins = {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        color: var(--secondaryColor);
         text-decoration: none;`
 }
 

@@ -1,23 +1,26 @@
 import React from "react";
 import { projectsData } from "./projectsData";
 import Project from "./Project";
-import Carousel from "react-elastic-carousel";
 import styled from "styled-components";
 import mixins from "../../styles/mixins";
 
-const StyledCarouselContainer = styled.div`
-  ${mixins.carouselContainer}
+const StyledContainer = styled.div`
+  ${mixins.container}
+`;
+
+const StyledProjectContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55%;
+  height: 90vh;
+  padding: 10px;
 `;
 
 export default function Projects() {
   return (
-    <StyledCarouselContainer>
-      <Carousel
-        pagination={false}
-        showArrows={true}
-        enableAutoPlay={true}
-        autoPlaySpeed={4000}
-      >
+    <StyledContainer>
+      <StyledProjectContainer>
         {projectsData.map((p, index) => {
           return (
             <Project
@@ -25,10 +28,11 @@ export default function Projects() {
               name={p.name}
               description={p.description}
               link={p.link}
+              usedTechnologies={p.usedTechnologies}
             />
           );
         })}
-      </Carousel>
-    </StyledCarouselContainer>
+      </StyledProjectContainer>
+    </StyledContainer>
   );
 }
