@@ -4,20 +4,26 @@ import mixins from "../../styles/mixins";
 import IconGitHub from "../icons/github";
 import IconLinkedin from "../icons/linkedin";
 import IconCalendly from "../icons/calendly";
-import IconLine from "../icons/line";
+import IconArrow from '../icons/arrow';
 
 
 const StyledContainer = styled.div`
     display: flex;
+    position:fixed;
+    align-items: flex-end;
+    width: 10%;
+    height: 100%;
+`;
+
+const StyledSubContainer = styled.div`
+    display: flex;
     flex-direction: column;
     align-items: center;
+    height: 60%;
+    width: 100%;
     justify-content: center;
-    position:fixed;    
-    width: 10%;
-    padding: 1rem;
-    height: 100%;
-
 `;
+
 const StyledLink = styled.a`
   ${mixins.link}
   width: 15%;
@@ -33,39 +39,31 @@ const StyledLink = styled.a`
 `;
 
 const StyledLine = styled.div`
-  ${mixins.link}
-
-    width: 15%;
-    color: var(--primaryDarkColor);
-    transform: rotateX('angle');
-
-    outline: 1px solid red;
-    
+    background-color: var(--primaryDarkColor);
+    width: 2%;
+    height: 35%;
+    margin-top: 1rem;
 `
 
 
 
 const Side = () => (
     <StyledContainer>
-        <StyledLink
-            href="https://calendly.com/ramifazio/30min"
-            rel="noreferrer"
-            target="_blank"
-        >
-            <IconCalendly />
-        </StyledLink>
-        <StyledLink href={"https://github.com/ramirofazio"} target="_blank" rel="noreferrer">
-            <IconLinkedin />
-        </StyledLink>
-        <StyledLink href={"https://github.com/ramirofazio"} target="_blank" rel="noreferrer">
-            <IconGitHub />
-        </StyledLink>
-        <StyledLine>
-            <IconLine />
-            <IconLine />
-            <IconLine />
-            <IconLine />
-        </StyledLine>
+        <StyledSubContainer>
+            <StyledLink href="#home">
+                <IconArrow />
+            </StyledLink>
+            <StyledLink href="https://calendly.com/ramifazio/30min" rel="noreferrer" target="_blank">
+                <IconCalendly />
+            </StyledLink>
+            <StyledLink href="https://www.linkedin.com/in/ramiro-fazio-dattoli/" target="_blank" rel="noreferrer">
+                <IconLinkedin />
+            </StyledLink>
+            <StyledLink href="https://github.com/ramirofazio" target="_blank" rel="noreferrer">
+                <IconGitHub />
+            </StyledLink>
+            <StyledLine />
+        </StyledSubContainer>
     </StyledContainer>
 
 )
