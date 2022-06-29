@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 import mixins from "../../styles/mixins";
-import IconGitHub from "../icons/github";
 
 const StyledContainer = styled.div`
   ${mixins.container}
@@ -72,33 +71,7 @@ const StyledButton = styled.input`
   }
 `;
 
-const StyledCalendlyButton = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20%;
-  height: 2rem;
-  border-radius: 5px;
-  border: 1.5px solid var(--primaryDarkColor);
-  background-color: var(--baseColor);
-  color: var(--primaryDarkColor);
-  text-decoration: none;
 
-  transition: all 1.5s ease;
-  &:hover {
-    background-color: var(--primaryDarkColor);
-    color: var(--baseColor);
-    border: 1.5px solid var(--baseColor);
-  }
-`;
-
-const StyledLinksContainer = styled(StyledContainer)`
-  flex-direction: row;
-  justify-content: space-around;
-  width: 10%;
-  height: 5%;
-  outline: 1px solid red;
-`;
 
 function Contact() {
   const form = useRef();
@@ -139,37 +112,7 @@ function Contact() {
           <StyledTextArea name="clientMessage" />
         </StyledTextAreaContainer>
         <StyledButton type="submit" value="Send" />
-        <StyledCalendlyButton
-          href="https://calendly.com/ramifazio/30min"
-          rel="noreferrer"
-          target="_blank"
-        >
-          Calendly
-        </StyledCalendlyButton>
       </StyledForm>
-      <StyledLinksContainer>
-        <a
-          href="https://github.com/ramirofazio"
-          rel="noreferrer"
-          target="_blank"
-        >
-          <img src={IconGitHub()} width="100px" color="white" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/ramiro-fazio-dattoli/"
-          rel="noreferrer"
-          target="_blank"
-        >
-          <img src="https://img.icons8.com/ios-glyphs/30/000000/linkedin-circled--v1.png" />
-        </a>
-        <a
-          href="https://drive.google.com/drive/folders/1VTwnR9GBwnugsJ0-q_TJK9cipyw7jh4c?usp=sharing"
-          rel="noreferrer"
-          target="_blank"
-        >
-          <img src="https://img.icons8.com/material-outlined/24/000000/parse-resume.png" />
-        </a>
-      </StyledLinksContainer>
     </StyledContainer>
   );
 }

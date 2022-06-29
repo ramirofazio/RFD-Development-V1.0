@@ -58,7 +58,6 @@ const HomeLinks = styled.a`
   transition: all 0.5s;
 
   &:hover {
-    opacity: 70%;
     color: var(--secondaryColor);
   }
 `;
