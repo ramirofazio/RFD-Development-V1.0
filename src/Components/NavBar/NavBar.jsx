@@ -24,7 +24,7 @@ const NavBarContainer = styled.div`
     css`
       height: 4rem;
       transform: translateY(0px);
-      transition: transform 0.5s ease;
+      transition: transform 1s ease;
 
       border
     `};
@@ -34,31 +34,30 @@ const NavBarContainer = styled.div`
     !props.scrolledToTop &&
     css`
       height: var(--nav-scroll-height);
-      transform: translateY(-4rem);
-      transition: transform 0.5s ease;
+      transform: translateY(-6rem);
+      transition: transform 1s ease;
     `};
 `;
 
 const Logo = styled.img`
-  height: 3rem;
-  width: 3rem;
-
-  transition: all 0.5s;
+  height: 4rem;
 
   &:hover {
-    opacity: 70%;
+    cursor: default;
   }
 `;
 
 const HomeLinks = styled.a`
   text-decoration: none;
-  font-size: 1.5rem;
-  color: var(--primaryColor);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primaryDarkColor);
 
-  transition: all 0.5s;
+  transition: all 0.3s ease;
 
   &:hover {
     color: var(--secondaryColor);
+    border-bottom: 2px solid var(--secondaryColor);
   }
 `;
 
@@ -83,9 +82,7 @@ function NavBar() {
       scrollDirection={scrollDirection}
       scrolledToTop={scrolledToTop}
     >
-      <a href="#home">
-        <Logo src={logo} alt="" />
-      </a>
+      <Logo src={logo} alt="" />
       {scrollLinks.map((link) => {
         return (
           <HomeLinks href={link.url} key={link.id}>

@@ -11,7 +11,7 @@ const StyledContainer = styled.div`
     display: flex;
     position:fixed;
     align-items: flex-end;
-    width: 10%;
+    width: 5%;
     height: 100%;
 `;
 
@@ -26,7 +26,7 @@ const StyledSubContainer = styled.div`
 
 const StyledLink = styled.a`
   ${mixins.link}
-  width: 15%;
+  width: 25%;
   color: var(--primaryDarkColor);
 
   margin: 2rem ;

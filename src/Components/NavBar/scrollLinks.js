@@ -1,17 +1,17 @@
 export const scrollLinks = [
     {
         id: 2,
-        text: "about",
+        text: "About",
         url: "#about"
     },
     {
         id: 3,
-        text: "projects",
+        text: "Projects",
         url: "#projects"
     },
     {
         id: 4,
-        text: "contact",
+        text: "Contact",
         url: "#contact"
     }
 ]
