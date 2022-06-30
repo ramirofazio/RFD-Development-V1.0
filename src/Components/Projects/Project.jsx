@@ -44,21 +44,36 @@ const StyledSubContainer = styled.div`
 `;
 
 const StyledName = styled.h1`
-  text-align: center;
-  color: var(--primaryColor);
+  width: 100%;
   font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 1px solid var(--secondaryColor);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+
+  color: var(--primaryColor);
 `;
 
 const StyledDescription = styled.p`
+  font-size: 1.5rem;
+  font-weight: 100;
   text-align: center;
   color: var(--primaryDarkColor);
-  font-size: large;
+`;
+const StyledTechnologiesContainer = styled.p`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 `;
 const StyledTechnologies = styled.p`
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--primaryDarkColor);
   text-align: center;
+  margin-inline: 1%;
 `;
-
 function Project({ name, description, link, usedTechnologies }) {
   return (
     <StyledContainer>
@@ -66,7 +81,11 @@ function Project({ name, description, link, usedTechnologies }) {
         <StyledName>{name}</StyledName>
         <StyledDescription>{description}</StyledDescription>
       </StyledSubContainer>
-      <StyledTechnologies>{usedTechnologies}</StyledTechnologies>
+      <StyledTechnologiesContainer>
+        {usedTechnologies.map((technology) => (
+          <StyledTechnologies key={technology}>{technology}</StyledTechnologies>
+        ))}
+      </StyledTechnologiesContainer>
       <StyledLink href={link} target="_blank" rel="noreferrer">
         <IconGitHub />
       </StyledLink>
