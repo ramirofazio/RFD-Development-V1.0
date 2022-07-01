@@ -7,12 +7,11 @@ const StyledContainer = styled.div`
 `;
 
 const SubContainer = styled.div`
-  padding: 50px;
+  padding: 5%;
 
   &:hover {
     cursor: default;
   }
-  
 `;
 
 const Intro = styled.h1`
@@ -20,7 +19,7 @@ const Intro = styled.h1`
   color: var(--secondaryColor);
   font-family: var(--principalFont);
   font-weight: 200;
-  font-size: 1.5rem;
+  font-size: 2.5 rem;
   &:hover {
     cursor: default;
   }
@@ -29,20 +28,23 @@ const Intro = styled.h1`
 const Name = styled.h1`
   color: var(--primaryColor);
   font-family: var(--secondaryFont);
-  font-size: 4.5rem;
+  font-size: 5.5rem;
   margin: 0;
 
-  transition: all 3s ease;
+  transition: all 2s ease;
   &:hover {
-    color: var(--secondaryColor);
     cursor: default;
+    font-size: 10rem;
+    margin: 35rem 0rem;
+    color: var(--secondaryColor);
+    text-align: center;
   }
 `;
 
 const P = styled(Intro)`
   margin: 0;
   color: var(--primaryDarkColor);
-  font-size: 2.5rem;
+  font-size: 2rem;
 
   &:hover {
     cursor: default;
