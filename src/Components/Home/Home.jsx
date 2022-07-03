@@ -34,10 +34,7 @@ const Name = styled.h1`
   transition: all 2s ease;
   &:hover {
     cursor: default;
-    font-size: 10rem;
-    margin: 35rem 0rem;
     color: var(--secondaryColor);
-    text-align: center;
   }
 `;
 
