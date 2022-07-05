@@ -1,25 +1,16 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 import mixins from "../../styles/mixins";
 
 const StyledContainer = styled.div`
   ${mixins.container}
-`;
+  flex-direction: column;
 
-const StyledH1 = styled.h1`
-  color: var(--secondaryColor);
-  font-family: var(--secondaryFont);
-  font-size: 4rem;
-  font-weight: 200;
-  border-bottom: 1px solid var(--secondaryColor);
-`;
-
-const StyledP = styled.p`
-  width: 70%;
-  color: var(--primaryDarkColor);
-  font-size: 1.5rem;
-  text-align: center;
+  &:hover {
+    pointer-events: none;
+    cursor: default;
+  }
 `;
 
 const StyledForm = styled.form`
@@ -32,6 +23,32 @@ const StyledForm = styled.form`
   border: 1px solid var(--primaryDarkColor);
   border-radius: 10px;
   padding: 2rem;
+`;
+
+const StyledH1 = styled.h1`
+  text-align: center;
+  color: var(--secondaryColor);
+  font-family: var(--secondaryFont);
+  font-size: 4rem;
+  font-weight: 200;
+  border-bottom: 1px solid var(--secondaryColor);
+
+  &:hover {
+    pointer-events: none;
+    cursor: default;
+  }
+`;
+
+const StyledP = styled.p`
+  width: 70%;
+  color: var(--primaryDarkColor);
+  font-size: 1.5rem;
+  text-align: center;
+
+  &:hover {
+    pointer-events: none;
+    cursor: default;
+  }
 `;
 
 const StyledInputContainer = styled.div`
@@ -53,10 +70,16 @@ const StyledInput = styled.input`
   &:focus {
     outline: none;
   }
-  &:focus ~ label {
+  &:focus ~ label,
+  &:not(:focus):valid ~ label {
     font-size: 1rem;
     color: var(--secondaryColor);
-    transform: translateY(-2rem) translatex(-15rem);
+    left: 36%;
+    transform: translateY(-1.5rem);
+  }
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
   }
 `;
 const StyledLabel = styled.label`
@@ -90,13 +113,16 @@ const StyledTextArea = styled.textarea`
   &:focus {
     outline: none;
   }
-  &:focus ~ label {
+  &:focus ~ label,
+  &:not(:focus):valid ~ label {
     font-size: 1rem;
     color: var(--secondaryColor);
-    transform: translateY(-2rem) translatex(-15rem);
+    left: 36%;
+    transform: translateY(-1.5rem);
   }
 `;
 const StyledButton = styled.input`
+  text-align: center;
   font-size: 1.2rem;
   width: 20%;
   height: 2.5rem;
@@ -107,6 +133,7 @@ const StyledButton = styled.input`
 
   transition: all 0.5s linear;
   &:hover {
+    cursor: pointer;
     background-color: var(--secondaryColor);
     color: var(--baseColor);
     border: 1.5px solid var(--baseColor);
@@ -118,9 +145,11 @@ function Contact() {
   const serviceId = process.env.REACT_APP_SERVICE_ID;
   const templateId = process.env.REACT_APP_TEMPLATE_ID;
   const publicKey = process.env.REACT_APP_PUBLIC_KEY;
+  const [flag, setFlag] = useState(true);
 
   const sendEmail = (event) => {
     event.preventDefault();
+    setFlag(true);
 
     emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
       (result) => {
@@ -130,37 +159,52 @@ function Contact() {
         console.log(error.text);
       }
     );
+
+    form.current.reset();
   };
 
-  return (
-    <StyledContainer>
-      <StyledForm ref={form} onSubmit={sendEmail}>
-        <StyledH1>Contact Me</StyledH1>
-        <StyledP>
-          I&apos;m interested in freelance opportunities, especially ambitious
-          or large projects. However, if you have other request or question,
-          don&apos;t hesitate to use the form.
-        </StyledP>
-        <StyledInputContainer>
-          <StyledInput type="text" name="clientFullName" />
-          <StyledLabel>Full Name</StyledLabel>
-        </StyledInputContainer>
-        <StyledInputContainer>
-          <StyledInput type="email" name="clientEmail" />
-          <StyledLabel>Email</StyledLabel>
-        </StyledInputContainer>
-        <StyledInputContainer>
-          <StyledInput type="text" name="clientCelphone" />
-          <StyledLabel>Celphone</StyledLabel>
-        </StyledInputContainer>
-        <StyledTextAreaContainer>
-          <StyledTextArea name="clientMessage" />
-          <StyledLabel>Message</StyledLabel>
-        </StyledTextAreaContainer>
-        <StyledButton type="submit" value="Send" />
-      </StyledForm>
-    </StyledContainer>
-  );
+  if (flag) {
+    return (
+      <StyledContainer>
+        <StyledH1>Thanks for contacting me!</StyledH1>
+        <StyledP>Want to send another email?</StyledP>
+        <StyledButton
+          value="Send another email"
+          onClick={() => setFlag(false)}
+        />
+      </StyledContainer>
+    );
+  } else {
+    return (
+      <StyledContainer>
+        <StyledForm ref={form} onSubmit={sendEmail}>
+          <StyledH1>Contact Me</StyledH1>
+          <StyledP>
+            I&apos;m interested in freelance opportunities, especially ambitious
+            or large projects. However, if you have other request or question,
+            don&apos;t hesitate to use the form.
+          </StyledP>
+          <StyledInputContainer>
+            <StyledInput type="text" name="clientFullName" required />
+            <StyledLabel>Full Name</StyledLabel>
+          </StyledInputContainer>
+          <StyledInputContainer>
+            <StyledInput type="email" name="clientEmail" required />
+            <StyledLabel>Email</StyledLabel>
+          </StyledInputContainer>
+          <StyledInputContainer>
+            <StyledInput type="number" name="clientCelphone" required />
+            <StyledLabel>Celphone</StyledLabel>
+          </StyledInputContainer>
+          <StyledTextAreaContainer>
+            <StyledTextArea name="clientMessage" required />
+            <StyledLabel>Message</StyledLabel>
+          </StyledTextAreaContainer>
+          <StyledButton type="submit" value="Send" />
+        </StyledForm>
+      </StyledContainer>
+    );
+  }
 }
 
 export default Contact;
