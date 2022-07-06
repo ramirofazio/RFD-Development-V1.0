@@ -28,9 +28,17 @@ const NavBarContainer = styled.div`
     props.scrollDirection === "down" &&
     !props.scrolledToTop &&
     css`
-      transform: translateY(-6rem);
-      transition: transform 1s ease;
+      transform: translateY(-4.1rem);
+      height: 10%;
+      background-color: transparent;
+      transition: all 1s ease;
     `};
+  &:hover {
+    transform: translateY(0px);
+    height: 8%;
+    background-color: var(--baseColor);
+    transition: all 1s ease;
+  }
 `;
 
 const Logo = styled.img`
