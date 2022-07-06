@@ -62,8 +62,25 @@ const StyledInput = styled.input`
   color: var(--primaryDarkColor);
   font-size: 1.2rem;
   font-family: var(--primaryFont);
+  transition: all 0.5s linear;
   &:focus {
     outline: none;
+    border-bottom: 1px solid var(--secondaryColor);
+    animation: borderBottom 1s ease;
+  }
+  @keyframes borderBottom {
+    0% {
+      border-bottom: 1px solid var(--primaryDarkColor);
+    }
+    25% {
+      width: 0%;
+    }
+    50% {
+      width: 90%;
+    }
+    100% {
+      border-bottom: 1px solid var(--secondaryColor);
+    }
   }
   &:focus ~ label,
   &:not(:focus):valid ~ label {
@@ -107,6 +124,24 @@ const StyledTextArea = styled.textarea`
 
   &:focus {
     outline: none;
+    border-bottom: 1px solid var(--secondaryColor);
+    animation: borderBottom 1s ease;
+  }
+  @keyframes borderBottom {
+    0% {
+      border-bottom: 1px solid var(--primaryDarkColor);
+    }
+    25% {
+      max-width: 0%;
+      min-width: 0%;
+    }
+    50% {
+      max-width: 90%;
+      min-width: 90%;
+    }
+    100% {
+      border-bottom: 1px solid var(--secondaryColor);
+    }
   }
   &:focus ~ label,
   &:not(:focus):valid ~ label {
