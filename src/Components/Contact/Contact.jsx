@@ -6,11 +6,6 @@ import mixins from "../../styles/mixins";
 const StyledContainer = styled.div`
   ${mixins.container}
   flex-direction: column;
-
-  &:hover {
-    pointer-events: none;
-    cursor: default;
-  }
 `;
 
 const StyledForm = styled.form`
@@ -145,7 +140,7 @@ function Contact() {
   const serviceId = process.env.REACT_APP_SERVICE_ID;
   const templateId = process.env.REACT_APP_TEMPLATE_ID;
   const publicKey = process.env.REACT_APP_PUBLIC_KEY;
-  const [flag, setFlag] = useState(true);
+  const [flag, setFlag] = useState(false);
 
   const sendEmail = (event) => {
     event.preventDefault();
