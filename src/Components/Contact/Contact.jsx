@@ -6,11 +6,6 @@ import mixins from "../../styles/mixins";
 const StyledContainer = styled.div`
   ${mixins.container}
   flex-direction: column;
-
-  &:hover {
-    pointer-events: none;
-    cursor: default;
-  }
 `;
 
 const StyledForm = styled.form`
