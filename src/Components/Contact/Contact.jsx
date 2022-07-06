@@ -63,7 +63,8 @@ const StyledInput = styled.input`
   font-size: 1.2rem;
   font-family: var(--primaryFont);
   transition: all 0.5s linear;
-  &:focus {
+  &:focus,
+  &:not(:focus):valid {
     outline: none;
     border-bottom: 1px solid var(--secondaryColor);
     animation: borderBottom 1s ease;
