@@ -6,10 +6,9 @@ import IconGitHub from "../icons/github";
 const StyledContainer = styled.div`
   ${mixins.container}
   flex-direction: column;
-  flex-wrap: wrap;
   height: 50%;
   width: 100%;
-  padding: 15px;
+  padding: 10px;
   align-content: space-around;
   margin-inline: 1rem;
   transition: all 0.5s ease-in;
@@ -19,6 +18,9 @@ const StyledContainer = styled.div`
   &:hover {
     transform: translateY(-10px);
     box-shadow: 0px 10px 1px var(--secondaryColor);
+  }
+  &:hover a {
+    color: var(--secondaryColor);
   }
 `;
 
@@ -30,9 +32,6 @@ const StyledLink = styled.a`
   margin-top: 1rem;
 
   transition: all 1s ease;
-  &:hover {
-    color: var(--secondaryColor);
-  }
 `;
 
 const StyledSubContainer = styled.div`
@@ -40,7 +39,7 @@ const StyledSubContainer = styled.div`
   flex-direction: column;
   align-content: space-between;
   width: 100%;
-  height: 60%;
+  height: 65%;
 `;
 
 const StyledName = styled.h1`
@@ -56,7 +55,8 @@ const StyledName = styled.h1`
 `;
 
 const StyledDescription = styled.p`
-  font-size: 1.5rem;
+  width: auto;
+  font-size: 1.2rem;
   font-weight: 100;
   text-align: center;
   color: var(--primaryDarkColor);
