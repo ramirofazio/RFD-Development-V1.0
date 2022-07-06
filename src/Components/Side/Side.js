@@ -13,7 +13,8 @@ const StyledContainer = styled.div`
     align-items: flex-end;
     width: 5%;
     height: 100%;
-`;
+
+    `;
 
 const StyledSubContainer = styled.div`
     display: flex;
@@ -22,6 +23,32 @@ const StyledSubContainer = styled.div`
     height: 60%;
     width: 100%;
     justify-content: center;
+    transition: transform 1s ease-in-out;
+
+    &:not(:hover){
+        transform: translateY(85%);
+    }
+    &:not(:hover) a:first-child  {
+        color: var(--secondaryColor);
+        width: 35%;
+        animation: jumpingArrow 2s infinite;
+        animation-fill-mode: forwards;
+        
+        @keyframes jumpingArrow {
+            0% {
+                transform: translateY(5px);
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.1;
+            }
+            100% {
+                transform: translateY(-10px);
+                opacity: 0;
+            }
+        }
+    }
+    
 `;
 
 const StyledLink = styled.a`
