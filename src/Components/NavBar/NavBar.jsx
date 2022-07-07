@@ -40,15 +40,14 @@ const NavBarContainer = styled.div`
   }
 `;
 
-const Logo = styled.img`
+const StyledLogo = styled.img`
   height: 4rem;
-
   &:hover {
     cursor: default;
   }
 
   @media (max-width: 400px) {
-    height: 3rem;
+    height: 2.5rem;
   }
 `;
 
@@ -93,7 +92,7 @@ function NavBar() {
       scrolledToTop={scrolledToTop}
     >
       <a href="#home">
-        <Logo src={logo} alt="" />
+        <StyledLogo src={logo} alt="" />
       </a>
       {scrollLinks.map((link) => {
         return (
