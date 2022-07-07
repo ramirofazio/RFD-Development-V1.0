@@ -12,7 +12,8 @@ const StyledProjectContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 55%;
+  flex-wrap: wrap;
+  width: 55vw;
   height: 90vh;
   padding: 10px;
 `;

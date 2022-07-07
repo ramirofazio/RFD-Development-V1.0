@@ -7,7 +7,7 @@ const StyledContainer = styled.div`
   ${mixins.container}
   flex-direction: column;
   height: 50%;
-  width: 100%;
+  width: 100vw;
   padding: 10px;
   align-content: space-around;
   margin-inline: 1rem;
@@ -22,6 +22,8 @@ const StyledContainer = styled.div`
   &:hover a {
     color: var(--secondaryColor);
   }
+
+  border: 2px solid red;
 `;
 
 const StyledLink = styled.a`

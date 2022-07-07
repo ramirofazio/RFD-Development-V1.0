@@ -6,13 +6,12 @@ import styled, { css } from "styled-components";
 
 const NavBarContainer = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100%;
+  justify-content: space-evenly;
+  width: 100vw;
   height: 8%;
   background-color: var(--baseColor);
   position: fixed;
-  justify-content: space-around;
 
   background-color: var(--baseColor);
 
@@ -47,6 +46,10 @@ const Logo = styled.img`
   &:hover {
     cursor: default;
   }
+
+  @media (max-width: 400px) {
+    height: 3rem;
+  }
 `;
 
 const HomeLinks = styled.a`
@@ -57,9 +60,14 @@ const HomeLinks = styled.a`
 
   transition: all 0.3s ease;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: var(--secondaryColor);
     border-bottom: 2px solid var(--secondaryColor);
+  }
+  @media (max-width: 400px) {
+    font-size: 1rem;
+    font-weight: 400;
   }
 `;
 
