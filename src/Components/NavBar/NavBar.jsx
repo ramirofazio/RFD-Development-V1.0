@@ -28,7 +28,7 @@ const NavBarContainer = styled.div`
     props.scrollDirection === "down" &&
     !props.scrolledToTop &&
     css`
-      transform: translateY(-4.1rem);
+      transform: translateY(-4.5rem);
       height: 10%;
       background-color: transparent;
       transition: all 1s ease;
@@ -84,7 +84,9 @@ function NavBar() {
       scrollDirection={scrollDirection}
       scrolledToTop={scrolledToTop}
     >
-      <Logo src={logo} alt="" />
+      <a href="#home">
+        <Logo src={logo} alt="" />
+      </a>
       {scrollLinks.map((link) => {
         return (
           <HomeLinks href={link.url} key={link.id}>
