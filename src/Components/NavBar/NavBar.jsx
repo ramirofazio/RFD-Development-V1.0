@@ -6,13 +6,12 @@ import styled, { css } from "styled-components";
 
 const NavBarContainer = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100%;
+  justify-content: space-evenly;
+  width: 100vw;
   height: 8%;
   background-color: var(--baseColor);
   position: fixed;
-  justify-content: space-around;
 
   background-color: var(--baseColor);
 
@@ -41,11 +40,14 @@ const NavBarContainer = styled.div`
   }
 `;
 
-const Logo = styled.img`
+const StyledLogo = styled.img`
   height: 4rem;
-
   &:hover {
     cursor: default;
+  }
+
+  @media (max-width: 400px) {
+    height: 2.5rem;
   }
 `;
 
@@ -57,9 +59,14 @@ const HomeLinks = styled.a`
 
   transition: all 0.3s ease;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: var(--secondaryColor);
     border-bottom: 2px solid var(--secondaryColor);
+  }
+  @media (max-width: 400px) {
+    font-size: 1rem;
+    font-weight: 400;
   }
 `;
 
@@ -85,7 +92,7 @@ function NavBar() {
       scrolledToTop={scrolledToTop}
     >
       <a href="#home">
-        <Logo src={logo} alt="" />
+        <StyledLogo src={logo} alt="" />
       </a>
       {scrollLinks.map((link) => {
         return (

@@ -10,11 +10,16 @@ const StyledContainer = styled.div`
 
 const StyledProjectContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  width: 55%;
+  flex-wrap: wrap;
+  width: 55vw;
   height: 90vh;
   padding: 10px;
+
+  @media (max-width: 400px) {
+    width: 100vw;
+  }
 `;
 
 export default function Projects() {

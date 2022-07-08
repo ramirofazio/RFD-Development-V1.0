@@ -5,16 +5,9 @@ const mixins = {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
+        width: 100vw;
         height: 100vh;
         background-color: var(--baseColor);
-    `,
-    carouselContainer: css`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 80%;
-        height: 50vh;
     `,
     link: css`
         display: flex;

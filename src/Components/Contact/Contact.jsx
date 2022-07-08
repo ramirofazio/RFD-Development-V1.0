@@ -12,12 +12,24 @@ const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
   width: 60%;
   height: 80%;
   border: 1px solid var(--primaryDarkColor);
   border-radius: 10px;
-  padding: 2rem;
+  padding: 10px;
+
+  @media (max-width: 400px) {
+    width: 90%;
+    height: 90%;
+  }
+`;
+
+const StyledSubContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 40%;
 `;
 
 const StyledH1 = styled.h1`
@@ -32,6 +44,10 @@ const StyledH1 = styled.h1`
     pointer-events: none;
     cursor: default;
   }
+
+  @media (max-width: 400px) {
+    font-size: 3rem;
+  }
 `;
 
 const StyledP = styled.p`
@@ -44,17 +60,34 @@ const StyledP = styled.p`
     pointer-events: none;
     cursor: default;
   }
+  @media (max-width: 400px) {
+    width: 85%;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+  }
 `;
 
 const StyledInputContainer = styled.div`
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const StyledInputSubContainer = styled.div`
   ${mixins.container}
   width: 50%;
-  height: 10%;
+  height: 15%;
+
+  @media (max-width: 400px) {
+    width: 90%;
+  }
 `;
 
 const StyledInput = styled.input`
   width: 90%;
-  height: 50%;
+  height: 60%;
   text-align: center;
   background-color: var(--baseColor);
   border: none;
@@ -94,6 +127,16 @@ const StyledInput = styled.input`
   &::-webkit-outer-spin-button {
     -webkit-appearance: none;
   }
+
+  @media (max-width: 400px) {
+    font-size: 1rem;
+    &:focus ~ label,
+    &:not(:focus):valid ~ label {
+      font-size: 0.7rem;
+      left: 25%;
+      transform: translateY(-1rem);
+    }
+  }
 `;
 const StyledLabel = styled.label`
   font-size: 1.2rem;
@@ -103,7 +146,7 @@ const StyledLabel = styled.label`
   pointer-events: none;
 `;
 
-const StyledTextAreaContainer = styled(StyledInputContainer)`
+const StyledTextAreaContainer = styled(StyledInputSubContainer)`
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
@@ -151,7 +194,18 @@ const StyledTextArea = styled.textarea`
     left: 36%;
     transform: translateY(-1.5rem);
   }
+
+  @media (max-width: 400px) {
+    font-size: 1rem;
+    &:focus ~ label,
+    &:not(:focus):valid ~ label {
+      font-size: 0.7rem;
+      left: 25%;
+      transform: translateY(-1rem);
+    }
+  }
 `;
+
 const StyledButton = styled.input`
   text-align: center;
   font-size: 1.2rem;
@@ -168,6 +222,11 @@ const StyledButton = styled.input`
     background-color: var(--secondaryColor);
     color: var(--baseColor);
     border: 1.5px solid var(--baseColor);
+  }
+
+  @media (max-width: 400px) {
+    width: 40%;
+    font-size: 0.9rem;
   }
 `;
 
@@ -209,29 +268,33 @@ function Contact() {
     return (
       <StyledContainer>
         <StyledForm ref={form} onSubmit={sendEmail}>
-          <StyledH1>Contact Me</StyledH1>
-          <StyledP>
-            I&apos;m interested in freelance opportunities, especially ambitious
-            or large projects. However, if you have other request or question,
-            don&apos;t hesitate to use the form.
-          </StyledP>
+          <StyledSubContainer>
+            <StyledH1>Contact Me</StyledH1>
+            <StyledP>
+              I&apos;m interested in freelance opportunities, especially
+              ambitious or large projects. However, if you have other request or
+              question, don&apos;t hesitate to use the form.
+            </StyledP>
+          </StyledSubContainer>
           <StyledInputContainer>
-            <StyledInput type="text" name="clientFullName" required />
-            <StyledLabel>Full Name</StyledLabel>
+            <StyledInputSubContainer>
+              <StyledInput type="text" name="clientFullName" required />
+              <StyledLabel>Full Name</StyledLabel>
+            </StyledInputSubContainer>
+            <StyledInputSubContainer>
+              <StyledInput type="email" name="clientEmail" required />
+              <StyledLabel>Email</StyledLabel>
+            </StyledInputSubContainer>
+            <StyledInputSubContainer>
+              <StyledInput type="number" name="clientCelphone" required />
+              <StyledLabel>Celphone</StyledLabel>
+            </StyledInputSubContainer>
+            <StyledTextAreaContainer>
+              <StyledTextArea name="clientMessage" required />
+              <StyledLabel>Message</StyledLabel>
+            </StyledTextAreaContainer>
+            <StyledButton type="submit" value="Send" />
           </StyledInputContainer>
-          <StyledInputContainer>
-            <StyledInput type="email" name="clientEmail" required />
-            <StyledLabel>Email</StyledLabel>
-          </StyledInputContainer>
-          <StyledInputContainer>
-            <StyledInput type="number" name="clientCelphone" required />
-            <StyledLabel>Celphone</StyledLabel>
-          </StyledInputContainer>
-          <StyledTextAreaContainer>
-            <StyledTextArea name="clientMessage" required />
-            <StyledLabel>Message</StyledLabel>
-          </StyledTextAreaContainer>
-          <StyledButton type="submit" value="Send" />
         </StyledForm>
       </StyledContainer>
     );

@@ -5,18 +5,27 @@ import mixins from "../../styles/mixins";
 const StyledContainer = styled.div`
   ${mixins.container};
   flex-direction: column;
+  justify-content: space-evenly;
+`;
+
+const StyledH1 = styled.h1`
+  color: var(--primaryColor);
+
+  @media (max-width: 400px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const StyledSubContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
-  height: 50%;
+  justify-content: center;
+  width: 90%;
+  height: 70%;
+  padding: 5px;
 
-  outline: 1px solid red;
-`;
-const StyledH1 = styled.h1`
-  color: var(--primaryColor);
+  background-color: var(--baseLigthColor);
+  border-radius: 10px;
 `;
 const StyledP = styled.p`
   font-size: 1.5rem;
