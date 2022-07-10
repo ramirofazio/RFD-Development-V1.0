@@ -17,7 +17,7 @@ const StyledProjectContainer = styled.div`
   height: 90vh;
   padding: 10px;
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     width: 100vw;
   }
 `;

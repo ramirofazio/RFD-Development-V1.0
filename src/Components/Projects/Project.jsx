@@ -46,7 +46,7 @@ const StyledName = styled.h1`
   border-bottom-left-radius: 5px;
   color: var(--primaryColor);
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     font-size: 1.2rem;
   }
 `;
@@ -57,7 +57,7 @@ const StyledDescription = styled.p`
   text-align: center;
   color: var(--primaryDarkColor);
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     font-size: 0.8rem;
   }
 `;
@@ -75,7 +75,7 @@ const StyledTechnologies = styled.p`
   text-align: center;
   margin-inline: 1%;
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     font-size: 0.7rem;
     font-weight: 400;
   }
@@ -89,6 +89,7 @@ const StyledLink = styled.a`
   margin-top: 1rem;
 
   transition: all 1s ease;
+  text-align: center;
 `;
 
 function Project({ name, description, link, usedTechnologies }) {

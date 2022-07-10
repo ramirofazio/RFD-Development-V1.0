@@ -18,7 +18,7 @@ const StyledForm = styled.form`
   border-radius: 10px;
   padding: 10px;
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     width: 90%;
     height: 90%;
   }
@@ -45,7 +45,7 @@ const StyledH1 = styled.h1`
     cursor: default;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     font-size: 3rem;
   }
 `;
@@ -60,7 +60,7 @@ const StyledP = styled.p`
     pointer-events: none;
     cursor: default;
   }
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     width: 85%;
     font-size: 0.8rem;
     margin-top: 1rem;
@@ -80,7 +80,7 @@ const StyledInputSubContainer = styled.div`
   width: 50%;
   height: 15%;
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     width: 90%;
   }
 `;
@@ -128,7 +128,7 @@ const StyledInput = styled.input`
     -webkit-appearance: none;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     font-size: 1rem;
     &:focus ~ label,
     &:not(:focus):valid ~ label {
@@ -195,7 +195,7 @@ const StyledTextArea = styled.textarea`
     transform: translateY(-1.5rem);
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     font-size: 1rem;
     &:focus ~ label,
     &:not(:focus):valid ~ label {
@@ -224,7 +224,7 @@ const StyledButton = styled.input`
     border: 1.5px solid var(--baseColor);
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     width: 40%;
     font-size: 0.9rem;
   }
