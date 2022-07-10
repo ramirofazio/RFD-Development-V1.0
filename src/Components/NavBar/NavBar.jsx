@@ -46,7 +46,7 @@ const StyledLogo = styled.img`
     cursor: default;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     height: 2.5rem;
   }
 `;
@@ -64,7 +64,7 @@ const HomeLinks = styled.a`
     color: var(--secondaryColor);
     border-bottom: 2px solid var(--secondaryColor);
   }
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     font-size: 1rem;
     font-weight: 400;
   }

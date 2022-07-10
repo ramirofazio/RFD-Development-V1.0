@@ -11,7 +11,7 @@ const StyledContainer = styled.div`
 const StyledH1 = styled.h1`
   color: var(--primaryColor);
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     font-size: 1.2rem;
   }
 `;
