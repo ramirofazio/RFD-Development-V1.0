@@ -16,6 +16,10 @@ const SubContainer = styled.div`
   &:hover {
     cursor: default;
   }
+
+  @media (min-width: 900px) {
+    width: 60%;
+  }
 `;
 
 const Intro = styled.h1`
