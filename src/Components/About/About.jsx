@@ -24,7 +24,7 @@ const StyledSubContainer = styled.div`
   height: 70%;
   padding: 5px;
 
-  background-color: var(--baseLigthColor);
+  background-color: var(--baseLightColor);
   border-radius: 10px;
 `;
 const StyledP = styled.p`
