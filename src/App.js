@@ -4,20 +4,22 @@ import Home from './Components/Home/Home.jsx';
 import About from './Components/About/About.jsx';
 import Project from "./Components/Projects/Projects";
 import Contact from './Components/Contact/Contact.jsx';
-import Side from "./Components/Side/Side.js";
+import Side from "./Components/Side/Side.jsx";
+import MobileSide from "./Components/Side/MobileSide.jsx";
 import styled from "styled-components";
 import mixins from "./styles/mixins.js";
 
 const StyledContainer = styled.div`
 ${mixins.container}
 `
-
 function App() {
+  const screenSize = window.innerWidth;
+
 
   return (
     <main id="home">
       <NavBar />
-      <Side />
+      {screenSize > 900 ? <Side /> : null}
       <StyledContainer className='home'>
         <Home />
       </StyledContainer>
@@ -30,6 +32,7 @@ function App() {
       <StyledContainer className='contact' id='contact'>
         <Contact />
       </StyledContainer>
+      {screenSize < 900 ? <MobileSide /> : null}
     </main>
   );
 }

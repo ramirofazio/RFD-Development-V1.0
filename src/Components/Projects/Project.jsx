@@ -11,7 +11,7 @@ const StyledContainer = styled.div`
   width: 30%;
   padding: 5px;
   transition: all 0.3s ease-in-out;
-  background-color: var(--baseLigthColor);
+  background-color: var(--baseLightColor);
   border-radius: 10px;
   &:hover {
     transform: translateY(-10px);
