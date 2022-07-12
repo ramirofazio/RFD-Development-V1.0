@@ -46,7 +46,7 @@ const StyledH1 = styled.h1`
   }
 
   @media (max-width: 500px) {
-    font-size: 3rem;
+    font-size: ${(props) => (props.flag === true ? "1.5rem" : "3rem")};
   }
 `;
 
@@ -56,6 +56,7 @@ const StyledP = styled.p`
   font-size: 1.5rem;
   text-align: center;
   margin-top: 1rem;
+  margin-bottom: ${(props) => (props.flag === true ? "1rem" : "0rem")};
 
   &:hover {
     pointer-events: none;
@@ -63,7 +64,7 @@ const StyledP = styled.p`
   }
   @media (max-width: 500px) {
     width: 85%;
-    font-size: 0.8rem;
+    font-size: ${(props) => (props.flag === true ? "1rem" : "0.8rem")};
   }
 `;
 
@@ -255,11 +256,12 @@ function Contact() {
   if (flag) {
     return (
       <StyledContainer>
-        <StyledH1>Thanks for contacting me!</StyledH1>
-        <StyledP>Want to send another email?</StyledP>
+        <StyledH1 flag={flag}>Thanks for contacting me!</StyledH1>
+        <StyledP flag={flag}>Want to send another email?</StyledP>
         <StyledButton
           value="Send another email"
           onClick={() => setFlag(false)}
+          flag={flag}
         />
       </StyledContainer>
     );
