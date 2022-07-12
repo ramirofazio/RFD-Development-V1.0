@@ -7,27 +7,14 @@ const StyledContainer = styled.div`
 `;
 
 const StyledSubContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 90%;
-  height: 70%;
-  padding: 5px;
-  border-radius: 10px;
-  background-color: var(--baseLightColor);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  ${mixins.transparentContainer};
 `;
 
 const StyledH1 = styled.h1`
-  color: var(--secondaryColor);
-  font-family: var(--secondaryFont);
-  padding: 15px;
-  font-size: 3rem;
+  ${mixins.h1}
 
   @media (max-width: 500px) {
-    font-size: 1.2rem;
+    font-size: 3rem;
   }
 `;
 
@@ -43,10 +30,14 @@ const StyledInfoContainer = styled.div`
 
 const StyledP = styled.p`
   flex: 1;
+  text-align: center;
   padding: 15px;
   font-size: 1.5rem;
-  text-align: center;
   color: var(--primaryDarkColor);
+
+  @media (max-width: 500px) {
+    font-size: 0.8rem;
+  }
 `;
 
 function About() {
