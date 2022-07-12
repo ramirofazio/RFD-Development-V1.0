@@ -3,8 +3,8 @@
 
 :root {
   --baseColor: #0a192f;
+  --baseLightColor: #112240d8;
   --baseTransparentColor: #0a192fc5;
-  --baseLightColor: #112240;
   --primaryColor: #ccd6f7;
   --primaryDarkColor: #8892b0;
   --secondaryColor: #59c6ba;
@@ -31,7 +31,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: var(--primaryFont);
-  
 }
 
 body,html {

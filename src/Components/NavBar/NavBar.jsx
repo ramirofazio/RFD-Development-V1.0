@@ -13,7 +13,6 @@ const NavBarContainer = styled.div`
   background-color: var(--baseColor);
   position: fixed;
   transition: all 1s ease;
-
   background: var(--baseTransparentColor);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);

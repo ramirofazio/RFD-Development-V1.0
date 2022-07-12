@@ -16,6 +16,7 @@ const StyledContainer = styled.div`
   &:hover {
     transform: translateY(-10px);
     box-shadow: 0px 10px 0px var(--secondaryColor);
+    background-color: var(--baseColor);
   }
   &:hover a {
     color: var(--secondaryColor);
@@ -69,7 +70,7 @@ const StyledTechnologiesContainer = styled.p`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 100%;
+  width: 95%;
   height: 10%;
 `;
 const StyledTechnologies = styled.p`
