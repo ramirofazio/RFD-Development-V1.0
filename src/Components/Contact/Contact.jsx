@@ -118,7 +118,7 @@ const StyledInput = styled.input`
   &:not(:focus):valid ~ label {
     font-size: 1rem;
     color: var(--secondaryColor);
-    left: 36%;
+    left: 31%;
     transform: translateY(-1.5rem);
   }
   &::-webkit-inner-spin-button,
@@ -191,7 +191,7 @@ const StyledTextArea = styled.textarea`
   &:not(:focus):valid ~ label {
     font-size: 1rem;
     color: var(--secondaryColor);
-    left: 36%;
+    left: 31%;
     transform: translateY(-1.5rem);
   }
 
