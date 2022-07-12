@@ -31,20 +31,24 @@ const StyledContainer = styled.div`
 const StyledSubContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   width: 100%;
   height: 70%;
 `;
 
 const StyledName = styled.h1`
+  margin-top: 5%;
+  margin-bottom: 10%;
   width: 100%;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 600;
   text-align: center;
   border-bottom: 1px solid var(--secondaryColor);
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   color: var(--primaryColor);
+
+  @media (min-width: 900px) {
+  }
 
   @media (max-width: 500px) {
     font-size: 1.2rem;

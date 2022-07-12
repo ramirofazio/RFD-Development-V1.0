@@ -20,7 +20,7 @@ const StyledForm = styled.form`
 
   @media (max-width: 500px) {
     width: 90%;
-    height: 90%;
+    height: 80%;
   }
 `;
 
@@ -55,6 +55,7 @@ const StyledP = styled.p`
   color: var(--primaryDarkColor);
   font-size: 1.5rem;
   text-align: center;
+  margin-top: 1rem;
 
   &:hover {
     pointer-events: none;
@@ -63,12 +64,12 @@ const StyledP = styled.p`
   @media (max-width: 500px) {
     width: 85%;
     font-size: 0.8rem;
-    margin-top: 1rem;
   }
 `;
 
 const StyledInputContainer = styled.div`
   height: 60%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,12 +78,8 @@ const StyledInputContainer = styled.div`
 
 const StyledInputSubContainer = styled.div`
   ${mixins.container}
-  width: 50%;
+  width: 90%;
   height: 15%;
-
-  @media (max-width: 500px) {
-    width: 90%;
-  }
 `;
 
 const StyledInput = styled.input`
@@ -126,7 +123,9 @@ const StyledInput = styled.input`
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
     -webkit-appearance: none;
+    margin: 0;
   }
+  -moz-appearance: textfield;
 
   @media (max-width: 500px) {
     font-size: 1rem;
