@@ -54,7 +54,7 @@ const StyledLogo = styled.img`
 const HomeLinks = styled.a`
   text-decoration: none;
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--primaryDarkColor);
 
   transition: all 0.3s ease;
