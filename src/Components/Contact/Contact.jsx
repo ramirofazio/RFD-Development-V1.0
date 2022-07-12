@@ -250,7 +250,7 @@ function Contact() {
   const serviceId = process.env.REACT_APP_SERVICE_ID;
   const templateId = process.env.REACT_APP_TEMPLATE_ID;
   const publicKey = process.env.REACT_APP_PUBLIC_KEY;
-  const [flag, setFlag] = useState(true);
+  const [flag, setFlag] = useState(false);
 
   const sendEmail = (event) => {
     event.preventDefault();
