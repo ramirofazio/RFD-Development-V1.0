@@ -12,8 +12,10 @@ const NavBarContainer = styled.div`
   height: 8%;
   background-color: var(--baseColor);
   position: fixed;
-
-  background-color: var(--baseColor);
+  transition: all 1s ease;
+  background: var(--baseTransparentColor);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 
   ${(props) =>
     props.scrollDirection === "up" &&
@@ -36,7 +38,6 @@ const NavBarContainer = styled.div`
     transform: translateY(0px);
     height: 8%;
     background-color: var(--baseColor);
-    transition: all 1s ease;
   }
 `;
 

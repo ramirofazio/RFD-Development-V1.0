@@ -23,9 +23,10 @@ const StyledSubContainer = styled.div`
   width: 90%;
   height: 70%;
   padding: 5px;
-
-  background-color: var(--baseLightColor);
   border-radius: 10px;
+  background-color: var(--baseLightColor);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 `;
 const StyledP = styled.p`
   font-size: 1.5rem;

@@ -14,9 +14,11 @@ const StyledForm = styled.form`
   align-items: center;
   width: 60%;
   height: 80%;
-  border: 1px solid var(--primaryDarkColor);
   border-radius: 10px;
   padding: 10px;
+  background-color: var(--baseLightColor);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 
   @media (max-width: 500px) {
     width: 90%;
@@ -87,9 +89,11 @@ const StyledInput = styled.input`
   width: 90%;
   height: 60%;
   text-align: center;
-  background-color: var(--baseColor);
   border: none;
   border-bottom: 1px solid var(--primaryDarkColor);
+  background-color: var(--baseLightColor);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: var(--primaryDarkColor);
   font-size: 1.2rem;
   font-family: var(--primaryFont);
@@ -118,7 +122,7 @@ const StyledInput = styled.input`
   &:not(:focus):valid ~ label {
     font-size: 1rem;
     color: var(--secondaryColor);
-    left: 36%;
+    left: 31%;
     transform: translateY(-1.5rem);
   }
   &::-webkit-inner-spin-button,
@@ -161,7 +165,9 @@ const StyledTextArea = styled.textarea`
   border: none;
   border-bottom: 1px solid var(--primaryDarkColor);
   text-align: center;
-  background-color: var(--baseColor);
+  background-color: var(--baseLightColor);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   font-size: 1.2rem;
   color: var(--primaryDarkColor);
   font-family: var(--primaryFont);
@@ -191,7 +197,7 @@ const StyledTextArea = styled.textarea`
   &:not(:focus):valid ~ label {
     font-size: 1rem;
     color: var(--secondaryColor);
-    left: 36%;
+    left: 31%;
     transform: translateY(-1.5rem);
   }
 
@@ -209,10 +215,10 @@ const StyledTextArea = styled.textarea`
 const StyledButton = styled.input`
   text-align: center;
   font-size: 1.2rem;
-  width: 20%;
+  width: ${(props) => (props.flag === true ? "auto" : "20%")};
   height: 2.5rem;
   border-radius: 10px;
-  border: 1.5px solid var(--primaryDarkColor);
+  border: none;
   background-color: var(--baseColor);
   color: var(--primaryDarkColor);
 
@@ -221,13 +227,22 @@ const StyledButton = styled.input`
     cursor: pointer;
     background-color: var(--secondaryColor);
     color: var(--baseColor);
-    border: 1.5px solid var(--baseColor);
+    border: none;
   }
 
   @media (max-width: 500px) {
     width: 40%;
     font-size: 0.9rem;
   }
+`;
+
+const StyledThanksContainer = styled(StyledContainer)`
+  background-color: var(--baseLightColor);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 50%;
+  height: 50%;
+  border-radius: 10px;
 `;
 
 function Contact() {
@@ -255,7 +270,7 @@ function Contact() {
 
   if (flag) {
     return (
-      <StyledContainer>
+      <StyledThanksContainer>
         <StyledH1 flag={flag}>Thanks for contacting me!</StyledH1>
         <StyledP flag={flag}>Want to send another email?</StyledP>
         <StyledButton
@@ -263,7 +278,7 @@ function Contact() {
           onClick={() => setFlag(false)}
           flag={flag}
         />
-      </StyledContainer>
+      </StyledThanksContainer>
     );
   } else {
     return (
