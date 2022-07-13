@@ -4,12 +4,15 @@ import mixins from "../../styles/mixins";
 import IconGitHub from "../icons/github";
 
 const StyledContainer = styled.div`
-  ${mixins.transparentContainer}
+  ${mixins.container}
+  flex-direction: column;
   justify-content: flex-start;
   height: 50%;
   width: 30%;
   padding: 5px;
   transition: all 0.3s ease-in-out;
+  background-color: var(--baseLightColor);
+  border-radius: 10px;
   &:hover {
     transform: translateY(-10px);
     box-shadow: 0px 10px 0px var(--secondaryColor);

@@ -29,7 +29,7 @@ const StyledSubContainer = styled.div`
   &:not(:hover) a:first-child {
     color: var(--secondaryColor);
     width: 35%;
-    animation: jumpingArrow 3s infinite;
+    animation: jumpingArrow 2s infinite;
     animation-fill-mode: forwards;
 
     @keyframes jumpingArrow {
@@ -37,8 +37,8 @@ const StyledSubContainer = styled.div`
         transform: translateY(5px);
         opacity: 1;
       }
-      80% {
-        opacity: 0.5;
+      50% {
+        opacity: 0.1;
       }
       100% {
         transform: translateY(-10px);
