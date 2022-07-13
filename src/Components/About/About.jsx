@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import mixins from "../../styles/mixins";
+import Spline from "@splinetool/react-spline";
 
 const StyledContainer = styled.div`
   ${mixins.container};
@@ -10,7 +11,7 @@ const StyledSubContainer = styled.div`
   ${mixins.transparentContainer};
 
   @media (max-width: 500px) {
-    height: 85%;
+    height: 65%;
   }
 `;
 
@@ -29,7 +30,6 @@ const StyledInfoContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  margin-top: 1rem;
 `;
 
 const StyledP = styled.p`
@@ -40,7 +40,7 @@ const StyledP = styled.p`
   color: var(--primaryDarkColor);
 
   @media (max-width: 500px) {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   &#color {
@@ -48,8 +48,18 @@ const StyledP = styled.p`
     color: var(--secondaryColor);
 
     @media (max-width: 500px) {
-      font-size: 0.5rem;
+      font-size: 0.7rem;
     }
+  }
+`;
+
+const StyledSplineContainer = styled.div`
+  flex: 1.2;
+  width: 100%;
+  height: 100%;
+
+  @media (max-width: 500px) {
+    display: none;
   }
 `;
 
@@ -76,7 +86,9 @@ function About() {
             <br />
             <StyledP id="color">Lets create something amazing!</StyledP>
           </StyledP>
-          <div style={{ flex: 1.2 }}></div>
+          <StyledSplineContainer>
+            <Spline scene="https://prod.spline.design/5mWlu-F4BywOSNq8/scene.splinecode" />
+          </StyledSplineContainer>
         </StyledInfoContainer>
       </StyledSubContainer>
     </StyledContainer>
