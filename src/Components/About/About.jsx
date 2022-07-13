@@ -8,6 +8,10 @@ const StyledContainer = styled.div`
 
 const StyledSubContainer = styled.div`
   ${mixins.transparentContainer};
+
+  @media (max-width: 500px) {
+    height: 85%;
+  }
 `;
 
 const StyledH1 = styled.h1`
@@ -38,6 +42,15 @@ const StyledP = styled.p`
   @media (max-width: 500px) {
     font-size: 0.8rem;
   }
+
+  &#color {
+    font-size: 1.2rem;
+    color: var(--secondaryColor);
+
+    @media (max-width: 500px) {
+      font-size: 0.5rem;
+    }
+  }
 `;
 
 function About() {
@@ -47,12 +60,21 @@ function About() {
         <StyledH1>About Me</StyledH1>
         <StyledInfoContainer>
           <StyledP>
-            Mi name is Ramiro Fazio Dattoli. Im a big enthusiastic about
-            technology since I touch my first PC. With Henry on 2021 I
-            discovered my passion, I have great leadership skills and think that
-            teamwork is essential for achieving better results in less time.
-            Also, Im a very flexible person, multitasking, and can learn
-            technologies to solve problems, quickly and effectively.
+            I am a full-stack developer located in Argentina. I have a strong
+            passion for creating web applications and I am always looking for
+            new challenges.
+            <br />
+            <br />
+            Well organized and focused, I am always ready to learn new
+            technologies and share my knowledge with others.
+            <br />
+            <br />
+            Interested in the Front-End design and user interactions, I want to
+            create dinamic & scalables websites. Also interested about the
+            Back-End & DBs.
+            <br />
+            <br />
+            <StyledP id="color">Lets create something amazing!</StyledP>
           </StyledP>
           <div style={{ flex: 1.2 }}></div>
         </StyledInfoContainer>
