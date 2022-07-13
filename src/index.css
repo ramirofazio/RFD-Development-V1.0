@@ -26,6 +26,11 @@
   
 }
 
+::selection {
+  background: #000;
+  color: var(--secondaryColor);
+}
+
 *{
   margin: 0;
   padding: 0;

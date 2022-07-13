@@ -1,13 +1,14 @@
-import React from "react";
-import NavBar from './Components/NavBar/NavBar.jsx';
-import Home from './Components/Home/Home.jsx';
-import About from './Components/About/About.jsx';
-import Project from "./Components/Projects/Projects";
-import Contact from './Components/Contact/Contact.jsx';
-import Side from "./Components/Side/Side.jsx";
-import MobileSide from "./Components/Side/MobileSide.jsx";
+import React, { Suspense, lazy } from "react";
 import styled from "styled-components";
 import mixins from "./styles/mixins.js";
+import LoadingPage from "./Components/LoadingPage/LoadingPage.jsx";
+const NavBar = lazy(() => import("./Components/NavBar/NavBar.jsx"));
+const Home = lazy(() => import("./Components/Home/Home.jsx"));
+const About = lazy(() => import("./Components/About/About.jsx"));
+const Projects = lazy(() => import("./Components/Projects/Projects.jsx"));
+const Contact = lazy(() => import("./Components/Contact/Contact.jsx"));
+const Side = lazy(() => import("./Components/Side/Side.jsx"));
+const MobileSide = lazy(() => import("./Components/Side/MobileSide.jsx"));
 
 const StyledContainer = styled.div`
 ${mixins.container}
@@ -18,21 +19,23 @@ function App() {
 
   return (
     <main id="home">
-      <NavBar />
-      {screenSize > 900 ? <Side /> : null}
-      <StyledContainer className='home'>
-        <Home />
-      </StyledContainer>
-      <StyledContainer className='about' id='about'>
-        <About />
-      </StyledContainer>
-      <StyledContainer className='projects' id='projects'>
-        <Project />
-      </StyledContainer>
-      <StyledContainer className='contact' id='contact'>
-        <Contact />
-      </StyledContainer>
-      {screenSize < 900 ? <MobileSide /> : null}
+      <Suspense fallback={LoadingPage}>
+        <NavBar />
+        {screenSize > 900 ? <Side /> : null}
+        <StyledContainer className='home'>
+          <Home />
+        </StyledContainer>
+        <StyledContainer className='about' id='about'>
+          <About />
+        </StyledContainer>
+        <StyledContainer className='projects' id='projects'>
+          <Projects />
+        </StyledContainer>
+        <StyledContainer className='contact' id='contact'>
+          <Contact />
+        </StyledContainer>
+        {screenSize < 900 ? <MobileSide /> : null}
+      </Suspense>
     </main>
   );
 }

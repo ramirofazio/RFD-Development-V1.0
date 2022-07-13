@@ -1,52 +1,95 @@
 import React from "react";
 import styled from "styled-components";
 import mixins from "../../styles/mixins";
+import Spline from "@splinetool/react-spline";
 
 const StyledContainer = styled.div`
   ${mixins.container};
-  flex-direction: column;
-  justify-content: space-evenly;
-`;
-
-const StyledH1 = styled.h1`
-  color: var(--primaryColor);
-
-  @media (max-width: 500px) {
-    font-size: 1.2rem;
-  }
 `;
 
 const StyledSubContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 90%;
-  height: 70%;
-  padding: 5px;
-  border-radius: 10px;
-  background-color: var(--baseLightColor);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  ${mixins.transparentContainer};
+
+  @media (max-width: 500px) {
+    height: 65%;
+  }
 `;
+
+const StyledH1 = styled.h1`
+  ${mixins.h1}
+
+  @media (max-width: 500px) {
+    font-size: 3rem;
+  }
+`;
+
+const StyledInfoContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+`;
+
 const StyledP = styled.p`
-  font-size: 1.5rem;
+  flex: 1;
   text-align: center;
+  padding: 15px;
+  font-size: 1.5rem;
   color: var(--primaryDarkColor);
+
+  @media (max-width: 500px) {
+    font-size: 0.9rem;
+  }
+
+  &#color {
+    font-size: 1.2rem;
+    color: var(--secondaryColor);
+
+    @media (max-width: 500px) {
+      font-size: 0.7rem;
+    }
+  }
+`;
+
+const StyledSplineContainer = styled.div`
+  flex: 1.2;
+  width: 100%;
+  height: 100%;
+
+  @media (max-width: 500px) {
+    display: none;
+  }
 `;
 
 function About() {
   return (
     <StyledContainer>
-      <StyledH1>About Me</StyledH1>
       <StyledSubContainer>
-        <StyledP>
-          Mi name is Ramiro Fazio Dattoli. Im a big enthusiastic about
-          technology since I touch my first PC. With Henry on 2021 I discovered
-          my passion, I have great leadership skills and think that teamwork is
-          essential for achieving better results in less time. Also, Im a very
-          flexible person, multitasking, and can learn technologies to solve
-          problems, quickly and effectively.
-        </StyledP>
+        <StyledH1>About Me</StyledH1>
+        <StyledInfoContainer>
+          <StyledP>
+            I am a full-stack developer located in Argentina. I have a strong
+            passion for creating web applications and I am always looking for
+            new challenges.
+            <br />
+            <br />
+            Well organized and focused, I am always ready to learn new
+            technologies and share my knowledge with others.
+            <br />
+            <br />
+            Interested in the Front-End design and user interactions, I want to
+            create dinamic & scalables websites. Also interested about the
+            Back-End & DBs.
+            <br />
+            <br />
+            <StyledP id="color">Lets create something amazing!</StyledP>
+          </StyledP>
+          <StyledSplineContainer>
+            <Spline scene="https://prod.spline.design/5mWlu-F4BywOSNq8/scene.splinecode" />
+          </StyledSplineContainer>
+        </StyledInfoContainer>
       </StyledSubContainer>
     </StyledContainer>
   );
