@@ -87,7 +87,7 @@ function About() {
             <StyledP id="color">Lets create something amazing!</StyledP>
           </StyledP>
           <StyledSplineContainer>
-            <Spline scene="https://prod.spline.design/5mWlu-F4BywOSNq8/scene.splinecode" />
+            <Spline scene="https://prod.spline.design/5mWlu-F4BywOSNq8/scene.splinecode" />{" "}
           </StyledSplineContainer>
         </StyledInfoContainer>
       </StyledSubContainer>
