@@ -67,9 +67,7 @@ const StyledInput = styled.input`
   text-align: center;
   border: none;
   border-bottom: 1px solid var(--primaryDarkColor);
-  background-color: var(--baseLightColor);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background-color: transparent;
   color: var(--primaryDarkColor);
   font-size: 1.2rem;
   font-family: var(--primaryFont);
@@ -98,7 +96,7 @@ const StyledInput = styled.input`
   &:not(:focus):valid ~ label {
     font-size: 1rem;
     color: var(--secondaryColor);
-    left: 31%;
+    justify-content: flex-start;
     transform: translateY(-1.5rem);
   }
   &::-webkit-inner-spin-button,
@@ -109,21 +107,28 @@ const StyledInput = styled.input`
   -moz-appearance: textfield;
 
   @media (max-width: 500px) {
-    font-size: 1rem;
+    font-size: 0.8rem;
     &:focus ~ label,
     &:not(:focus):valid ~ label {
       font-size: 0.7rem;
-      left: 25%;
+      justify-content: flex-start;
       transform: translateY(-1rem);
     }
   }
 `;
 const StyledLabel = styled.label`
+  display: flex;
+  width: 64%;
+  justify-content: center;
   font-size: 1.2rem;
   color: var(--primaryDarkColor);
   position: absolute;
-  transition: transform 1s ease;
+  transition: all 1s ease;
   pointer-events: none;
+
+  @media (max-width: 500px) {
+    font-size: 1rem;
+  }
 `;
 
 const StyledTextAreaContainer = styled(StyledInputSubContainer)`
@@ -141,9 +146,7 @@ const StyledTextArea = styled.textarea`
   border: none;
   border-bottom: 1px solid var(--primaryDarkColor);
   text-align: center;
-  background-color: var(--baseLightColor);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background-color: transparent;
   font-size: 1.2rem;
   color: var(--primaryDarkColor);
   font-family: var(--primaryFont);
