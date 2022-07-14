@@ -38,6 +38,7 @@ const mixins = {
         background-color: var(--baseLightColor);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
+        z-index: -100;
             
         @media (max-width: 500px) {
           width: 90%;
