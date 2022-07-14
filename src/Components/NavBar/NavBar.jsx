@@ -17,6 +17,7 @@ const NavBarContainer = styled.div`
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   animation: fadeIn 1s ease-in;
+  z-index: 100;
 
   @keyframes fadeIn {
     0% {
