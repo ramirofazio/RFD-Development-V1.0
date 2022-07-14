@@ -19,7 +19,7 @@ function App() {
 
   return (
     <main id="home">
-      <Suspense fallback={LoadingPage}>
+      <Suspense fallback={<LoadingPage />}>
         <NavBar />
         {screenSize > 900 ? <Side /> : null}
         <StyledContainer className='home'>

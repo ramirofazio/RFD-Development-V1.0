@@ -1,16 +1,19 @@
 import React from "react";
-import styled from "styled-components";
-
-const StyledLoadingContainer = styled.div``;
-const StyledLoading = styled.div``;
-const StyledLoadingText = styled.div``;
+import "./LoadingPage.css";
 
 function LoadingPage() {
   return (
-    <StyledLoadingContainer>
-      <StyledLoading></StyledLoading>
-      <StyledLoadingText>loading</StyledLoadingText>
-    </StyledLoadingContainer>
+    <div id="loadingContainer">
+      <ul>
+        <li>L</li>
+        <li>O</li>
+        <li>A</li>
+        <li>D</li>
+        <li>I</li>
+        <li>N</li>
+        <li>G</li>
+      </ul>
+    </div>
   );
 }
 

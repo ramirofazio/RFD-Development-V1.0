@@ -7,6 +7,7 @@ const mixins = {
         align-items: center;
         width: 100vw;
         height: 100vh;
+        
     `,
     link: css`
         display: flex;
@@ -45,6 +46,28 @@ const mixins = {
           height: 80%;
         }
     `,
+    fadeInAnimation: css`
+    animation: fadeIn 1s ease-in;
+
+        @keyframes fadeIn {
+            0%{
+                opacity: 0;
+                transform: translateY(-5px) translateX(-5px);
+            }
+            25% {
+                opacity: 0.25;
+                transform: translateY(-2.5px) translateX(-2.5px);
+            }
+            50% {
+                opacity: 0.5;
+                transform: translateY(-1.8px) translateX(-1.8px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0px) translateX(0px);
+            }
+            
+        }`,
 }
 
 

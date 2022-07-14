@@ -31,13 +31,17 @@
   color: var(--secondaryColor);
 }
 
-*{
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: var(--primaryFont);
 }
 
+body::before,html::before,
+body::after,html::after,
 body,html {
   width: 100vw;
   height: 100vh;
