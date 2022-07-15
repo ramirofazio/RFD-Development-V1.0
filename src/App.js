@@ -11,7 +11,11 @@ const Side = lazy(() => import("./Components/Side/Side.jsx"));
 const MobileSide = lazy(() => import("./Components/Side/MobileSide.jsx"));
 
 const StyledContainer = styled.div`
-${mixins.container}
+${mixins.principalContainer}
+
+&#home, &#about, &#contact {
+  height: 100vh;
+}
 `
 function App() {
   const screenSize = window.innerWidth;
@@ -22,21 +26,21 @@ function App() {
       <Suspense fallback={<LoadingPage />}>
         <NavBar />
         {screenSize > 900 ? <Side /> : null}
-        <StyledContainer className='home'>
+        <StyledContainer id="home">
           <Home />
         </StyledContainer>
-        <StyledContainer className='about' id='about'>
+        <StyledContainer id='about'>
           <About />
         </StyledContainer>
-        <StyledContainer className='projects' id='projects'>
+        <StyledContainer id='projects'>
           <Projects />
         </StyledContainer>
-        <StyledContainer className='contact' id='contact'>
+        <StyledContainer id='contact'>
           <Contact />
         </StyledContainer>
         {screenSize < 900 ? <MobileSide /> : null}
       </Suspense>
-    </main>
+    </main >
   );
 }
 

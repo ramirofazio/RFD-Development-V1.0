@@ -4,26 +4,35 @@ import mixins from "../../styles/mixins";
 import IconGitHub from "../icons/github";
 
 const StyledContainer = styled.div`
-  ${mixins.transparentContainer}
+  ${mixins.container}
+  flex: 1;
+  flex-direction: column;
   justify-content: flex-start;
-  height: 50%;
-  width: 30%;
+  height: 40%;
+  min-width: 30%;
+  max-width: 30%;
+  margin-inline: 1rem;
   padding: 5px;
+  border-radius: 10px;
   transition: all 0.3s ease-in-out;
+  background-color: var(--baseColor);
+  box-shadow: 0px 10px 0px var(--secondaryColor);
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 10px 0px var(--secondaryColor);
-    background-color: var(--baseColor);
+    box-shadow: 0px 0px 0px var(--primaryDarkColor);
   }
   &:hover a {
     color: var(--secondaryColor);
+  }
+
+  &:hover p {
+    color: var(--primaryDarkColor);
   }
 
   @media (max-width: 500px) {
     width: 45%;
     height: 40%;
     margin: 5px;
-  } ;
+  }
 `;
 
 const StyledSubContainer = styled.div`
@@ -67,15 +76,17 @@ const StyledTechnologiesContainer = styled.p`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
   width: 95%;
   height: 10%;
 `;
 const StyledTechnologies = styled.p`
   font-size: 1rem;
   font-weight: 600;
-  color: var(--primaryDarkColor);
+  color: var(--secondaryColor);
   text-align: center;
   margin-inline: 1%;
+  transition: all 1s ease;
 
   @media (max-width: 500px) {
     font-size: 0.7rem;
