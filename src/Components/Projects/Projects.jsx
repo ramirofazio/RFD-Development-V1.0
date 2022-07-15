@@ -12,6 +12,10 @@ const StyledContainer = styled.div`
 
 const H1 = styled.h1`
   ${mixins.h1}
+
+  @media  (max-width: 500px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const StyledProjectContainer = styled.div`
@@ -28,6 +32,7 @@ const StyledProjectSubContainer = styled.div`
   height: 100%;
   padding: 10px;
   margin-top: 5rem;
+  overflow: scroll;
 `;
 
 export default function Projects() {

@@ -29,9 +29,10 @@ const StyledContainer = styled.div`
   }
 
   @media (max-width: 500px) {
-    width: 45%;
-    height: 40%;
-    margin: 5px;
+    margin-inline: 0;
+    min-width: 100%;
+    margin-bottom: 2.5rem;
+    min-height: 30%;
   }
 `;
 
@@ -54,11 +55,8 @@ const StyledName = styled.h1`
   border-bottom-left-radius: 5px;
   color: var(--primaryColor);
 
-  @media (min-width: 900px) {
-  }
-
   @media (max-width: 500px) {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -67,9 +65,11 @@ const StyledDescription = styled.p`
   font-weight: 100;
   text-align: center;
   color: var(--primaryDarkColor);
+  max-width: 75%;
+  margin: 0 auto;
 
   @media (max-width: 500px) {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 `;
 const StyledTechnologiesContainer = styled.p`
