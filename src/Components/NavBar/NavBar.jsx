@@ -115,7 +115,7 @@ function NavBar() {
       scrollDirection={scrollDirection}
       scrolledToTop={scrolledToTop}
     >
-      <a href="#home">
+      <a href="#home" onClick={() => window.location.reload()}>
         <StyledLogo src={logo} alt="" />
       </a>
       {scrollLinks.map((link) => {
