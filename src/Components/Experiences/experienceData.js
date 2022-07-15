@@ -1,4 +1,4 @@
-export const projectsData = [
+export const experienceData = [
     {
         name: "RFD Development",
         description: "This Portafolio, to train my habilites.",

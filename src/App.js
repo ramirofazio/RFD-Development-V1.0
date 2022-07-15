@@ -5,7 +5,7 @@ import LoadingPage from "./Components/LoadingPage/LoadingPage.jsx";
 const NavBar = lazy(() => import("./Components/NavBar/NavBar.jsx"));
 const Home = lazy(() => import("./Components/Home/Home.jsx"));
 const About = lazy(() => import("./Components/About/About.jsx"));
-const Projects = lazy(() => import("./Components/Projects/Projects.jsx"));
+const Experience = lazy(() => import("./Components/Experiences/Experiences.jsx"));
 const Contact = lazy(() => import("./Components/Contact/Contact.jsx"));
 const Side = lazy(() => import("./Components/Side/Side.jsx"));
 const MobileSide = lazy(() => import("./Components/Side/MobileSide.jsx"));
@@ -32,8 +32,8 @@ function App() {
         <StyledContainer id='about'>
           <About />
         </StyledContainer>
-        <StyledContainer id='projects'>
-          <Projects />
+        <StyledContainer id='experience'>
+          <Experience />
         </StyledContainer>
         <StyledContainer id='contact'>
           <Contact />

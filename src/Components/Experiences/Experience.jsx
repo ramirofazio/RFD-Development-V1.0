@@ -105,7 +105,7 @@ const StyledLink = styled.a`
   text-align: center;
 `;
 
-function Project({ name, description, link, usedTechnologies }) {
+function Experience({ name, description, link, usedTechnologies }) {
   return (
     <StyledContainer>
       <StyledSubContainer>
@@ -124,4 +124,4 @@ function Project({ name, description, link, usedTechnologies }) {
   );
 }
 
-export default Project;
+export default Experience;

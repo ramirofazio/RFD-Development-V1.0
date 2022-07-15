@@ -1,6 +1,6 @@
 import React from "react";
-import { projectsData } from "./projectsData";
-import Project from "./Project";
+import { experienceData } from "./experienceData";
+import Experience from "./Experience";
 import styled from "styled-components";
 import mixins from "../../styles/mixins";
 
@@ -35,15 +35,15 @@ const StyledProjectSubContainer = styled.div`
   overflow: scroll;
 `;
 
-export default function Projects() {
+export default function Experiences() {
   return (
     <StyledContainer>
       <StyledProjectContainer>
         <H1>My Experience</H1>
         <StyledProjectSubContainer>
-          {projectsData.map((p, index) => {
+          {experienceData.map((p, index) => {
             return (
-              <Project
+              <Experience
                 key={index}
                 name={p.name}
                 description={p.description}

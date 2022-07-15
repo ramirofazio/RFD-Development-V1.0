@@ -6,8 +6,8 @@ export const scrollLinks = [
     },
     {
         id: 3,
-        text: "Projects",
-        url: "#projects"
+        text: "Experience",
+        url: "#experience"
     },
     {
         id: 4,
