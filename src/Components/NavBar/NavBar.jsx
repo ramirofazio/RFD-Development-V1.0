@@ -52,7 +52,9 @@ const NavBarContainer = styled.div`
     css`
       transform: translateY(-4.5rem);
       height: 10%;
-      background-color: transparent;
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
       transition: all 1s ease;
     `};
   &:hover {
