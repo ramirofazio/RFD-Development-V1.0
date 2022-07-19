@@ -44,9 +44,13 @@ const StyledSubContainer = styled.div`
 `;
 
 const StyledName = styled.h1`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 5%;
   margin-bottom: 10%;
   width: 100%;
+  min-height: 20%;
   font-size: 1.8rem;
   font-weight: 600;
   text-align: center;
@@ -61,12 +65,15 @@ const StyledName = styled.h1`
 `;
 
 const StyledDescription = styled.p`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.2rem;
   font-weight: 100;
   text-align: center;
   color: var(--primaryDarkColor);
   max-width: 75%;
-  margin: 0 auto;
+  margin: auto;
 
   @media (max-width: 500px) {
     font-size: 1rem;
