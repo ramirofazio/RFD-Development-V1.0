@@ -18,6 +18,18 @@ const H1 = styled.h1`
   }
 `;
 
+const StyledP = styled.p`
+  margin-top: 10px;
+  text-align: center;
+  padding: 15px;
+  font-size: 1.5rem;
+  color: var(--primaryDarkColor);
+
+  @media (max-width: 500px) {
+    font-size: 0.9rem;
+  }
+`;
+
 const StyledProjectContainer = styled.div`
   ${mixins.transparentContainer}
 `;
@@ -40,6 +52,7 @@ export default function Experiences() {
     <StyledContainer>
       <StyledProjectContainer>
         <H1>My Experience</H1>
+        <StyledP>These are some proyects that i worked on</StyledP>
         <StyledProjectSubContainer>
           {experienceData.map((p, index) => {
             return (
