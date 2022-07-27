@@ -176,7 +176,7 @@ const StyledTextArea = styled.textarea`
   &:not(:focus):valid ~ label {
     font-size: 1rem;
     color: var(--secondaryColor);
-    left: 31%;
+    justify-content: flex-start;
     transform: translateY(-1.5rem);
   }
 
