@@ -233,7 +233,10 @@ function Contact() {
 
   const sendEmail = (event) => {
     event.preventDefault();
-    setFlag(true);
+
+    if (form.current) {
+      setFlag(true);
+    }
 
     emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
       (result) => {
