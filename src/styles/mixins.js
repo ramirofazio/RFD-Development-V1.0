@@ -26,7 +26,7 @@ const mixins = {
          text-align: center;
         color: var(--secondaryColor);
         font-family: var(--secondaryFont);
-        font-size: 4rem;
+        font-size: 3rem;
         font-weight: 200;
         border-bottom: 1px solid var(--secondaryColor);
 

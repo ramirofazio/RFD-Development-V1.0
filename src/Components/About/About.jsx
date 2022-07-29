@@ -19,7 +19,7 @@ const StyledH1 = styled.h1`
   ${mixins.h1}
 
   @media (max-width: 500px) {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 `;
 
@@ -36,7 +36,7 @@ const StyledP = styled.p`
   flex: 1;
   text-align: center;
   padding: 15px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--primaryDarkColor);
 
   @media (max-width: 500px) {
@@ -87,7 +87,9 @@ function About() {
             <StyledP id="color">Lets create something amazing!</StyledP>
           </StyledP>
           <StyledSplineContainer>
-            <Spline scene="https://prod.spline.design/5mWlu-F4BywOSNq8/scene.splinecode" />{" "}
+            <Spline
+              scene="https://prod.spline.design/5mWlu-F4BywOSNq8/scene.splinecode"
+            />{" "}
           </StyledSplineContainer>
         </StyledInfoContainer>
       </StyledSubContainer>
