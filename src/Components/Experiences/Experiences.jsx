@@ -43,8 +43,7 @@ const StyledProjectSubContainer = styled.div`
   width: 100%;
   height: 100%;
   padding: 10px;
-  margin-top: 5rem;
-  overflow: scroll;
+  margin-top: 3rem;
 `;
 
 export default function Experiences() {
