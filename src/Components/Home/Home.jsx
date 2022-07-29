@@ -7,7 +7,7 @@ const StyledContainer = styled.div`
 `;
 
 const SubContainer = styled.div`
-  width: 100%;
+  width: 70%;
   height: 50vh;
   padding: 5px;
   display: flex;
@@ -15,10 +15,6 @@ const SubContainer = styled.div`
   justify-content: center;
   &:hover {
     cursor: default;
-  }
-
-  @media (min-width: 900px) {
-    width: 60%;
   }
 `;
 
