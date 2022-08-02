@@ -31,8 +31,6 @@ const StyledInfoContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-
-  outline: 1px solid red;
 `;
 
 const StyledP = styled.p`
