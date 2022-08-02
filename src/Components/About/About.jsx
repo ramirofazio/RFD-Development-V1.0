@@ -9,6 +9,7 @@ const StyledContainer = styled.div`
 
 const StyledSubContainer = styled.div`
   ${mixins.transparentContainer};
+  overflow: hidden;
 
   @media (max-width: 500px) {
     height: 65%;
@@ -30,21 +31,23 @@ const StyledInfoContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 10px;
+
+  outline: 1px solid red;
 `;
 
 const StyledP = styled.p`
   flex: 1;
   text-align: center;
   padding: 15px;
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: var(--primaryDarkColor);
 
   @media (max-width: 500px) {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   &#color {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     color: var(--secondaryColor);
 
     @media (max-width: 500px) {
@@ -54,8 +57,7 @@ const StyledP = styled.p`
 `;
 
 const StyledSplineContainer = styled.div`
-  flex: 1.2;
-  width: 100%;
+  width: 55%;
   height: 100%;
 
   @media (max-width: 500px) {
