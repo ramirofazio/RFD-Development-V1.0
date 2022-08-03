@@ -9,7 +9,7 @@ const NavBarContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
   width: 100vw;
-  height: 8%;
+  height: 10%;
   background-color: var(--baseColor);
   position: fixed;
   transition: all 1s ease;
@@ -51,16 +51,20 @@ const NavBarContainer = styled.div`
     !props.scrolledToTop &&
     css`
       transform: translateY(-4.5rem);
-      height: 10%;
+      height: 13%;
       background: transparent;
       backdrop-filter: none;
       -webkit-backdrop-filter: none;
-      transition: all 1s ease;
+      transition: all 1s ease-in-out;
     `};
   &:hover {
     transform: translateY(0px);
-    height: 8%;
+    height: 10%;
     background-color: var(--baseColor);
+    transition: all 1s ease-in-out;
+  }
+  &:not(:hover) {
+    transition: all 1s ease-in-out;
   }
 `;
 

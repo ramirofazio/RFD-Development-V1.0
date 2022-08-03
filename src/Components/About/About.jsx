@@ -57,13 +57,11 @@ const StyledP = styled.p`
 const StyledSplineContainer = styled.div`
   width: 55%;
   height: 100%;
-
-  @media (max-width: 500px) {
-    display: none;
-  }
 `;
 
 function About() {
+  const screen = window.innerWidth;
+
   return (
     <StyledContainer>
       <StyledSubContainer>
@@ -86,9 +84,11 @@ function About() {
             <br />
             <StyledP id="color">Lets create something amazing!</StyledP>
           </StyledP>
-          <StyledSplineContainer>
-            <Spline scene="https://prod.spline.design/5mWlu-F4BywOSNq8/scene.splinecode" />
-          </StyledSplineContainer>
+          {screen > 1000 ? (
+            <StyledSplineContainer>
+              <Spline scene="https://prod.spline.design/5mWlu-F4BywOSNq8/scene.splinecode" />
+            </StyledSplineContainer>
+          ) : null}
         </StyledInfoContainer>
       </StyledSubContainer>
     </StyledContainer>
