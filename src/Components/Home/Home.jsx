@@ -24,6 +24,10 @@ const Intro = styled.h1`
   font-size: 2.5rem;
   width: 100%;
   height: auto;
+  background: var(--baseTransparentColor);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+
   &:hover {
     cursor: default;
   }
@@ -57,6 +61,9 @@ const P = styled(Intro)`
   margin: 0;
   color: var(--primaryDarkColor);
   font-size: 2rem;
+  background: var(--baseTransparentColor);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 
   &:hover {
     cursor: default;
