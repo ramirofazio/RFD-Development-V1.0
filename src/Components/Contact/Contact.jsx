@@ -244,7 +244,7 @@ function Contact() {
       },
       (error) => {
         console.log(error.text);
-      }
+      },
     );
 
     form.current.reset();
@@ -271,7 +271,7 @@ function Contact() {
             <StyledP>
               I&apos;m interested in freelance opportunities, especially
               ambitious or large projects. However, if you have other request or
-              question, don&apos;t hesitate to use the form.
+              question, don&apos;t hesitate to use the form ;)
             </StyledP>
           </StyledSubContainer>
           <StyledInputContainer>

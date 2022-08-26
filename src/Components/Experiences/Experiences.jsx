@@ -43,8 +43,12 @@ const StyledProjectSubContainer = styled.div`
   width: 100%;
   height: 100%;
   padding: 10px;
-  margin-top: 5rem;
-  overflow: scroll;
+  padding-top: 3rem;
+  margin-top: 2rem;
+
+  @media (max-width: 500px) {
+    overflow-y: scroll;
+  }
 `;
 
 export default function Experiences() {
@@ -52,7 +56,7 @@ export default function Experiences() {
     <StyledContainer>
       <StyledProjectContainer>
         <H1>My Experience</H1>
-        <StyledP>These are some proyects that i worked on</StyledP>
+        <StyledP>These are some proyects that I worked on</StyledP>
         <StyledProjectSubContainer>
           {experienceData.map((p, index) => {
             return (
