@@ -74,7 +74,7 @@ function Contact() {
         <StyledP>
           I&apos;m interested in freelance opportunities, especially ambitious
           or large projects. However, if you have other request or question,
-          don&apos;t hesitate to send mi an E-mail!
+          don&apos;t hesitate to send an E-mail!
         </StyledP>
         <a href="mailto: ramifazio@gmail.com" style={{ width: "30%" }}>
           <StyledButton type="submit" value="Send" />
