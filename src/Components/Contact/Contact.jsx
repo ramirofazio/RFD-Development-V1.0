@@ -2,6 +2,30 @@ import React from "react";
 import styled from "styled-components";
 import mixins from "../../styles/mixins";
 
+function Contact() {
+  return (
+    <StyledContainer>
+      <StyledSubContainer data-aos="zoom-in">
+        <StyledH1 data-aos="fade-down">Contact Me</StyledH1>
+        <StyledP data-aos="fade-up">
+          I&apos;m interested in freelance opportunities, especially ambitious
+          or large projects. However, if you have other request or question,
+          don&apos;t hesitate to send an E-mail!
+        </StyledP>
+        <a
+          href="mailto: ramifazio@gmail.com"
+          style={{ width: "30%" }}
+          data-aos="fade-up"
+        >
+          <StyledButton type="submit" value="Send" />
+        </a>
+      </StyledSubContainer>
+    </StyledContainer>
+  );
+}
+
+export default Contact;
+
 const StyledContainer = styled.div`
   ${mixins.container}
   flex-direction: column;
@@ -65,23 +89,3 @@ const StyledButton = styled.input`
     font-size: 0.9rem;
   }
 `;
-
-function Contact() {
-  return (
-    <StyledContainer>
-      <StyledSubContainer>
-        <StyledH1>Contact Me</StyledH1>
-        <StyledP>
-          I&apos;m interested in freelance opportunities, especially ambitious
-          or large projects. However, if you have other request or question,
-          don&apos;t hesitate to send an E-mail!
-        </StyledP>
-        <a href="mailto: ramifazio@gmail.com" style={{ width: "30%" }}>
-          <StyledButton type="submit" value="Send" />
-        </a>
-      </StyledSubContainer>
-    </StyledContainer>
-  );
-}
-
-export default Contact;

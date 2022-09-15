@@ -2,6 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import mixins from "../../styles/mixins";
 
+function Home() {
+  return (
+    <StyledContainer>
+      <SubContainer>
+        <Intro>Hi, my name is</Intro>
+        <Name>Ramiro Fazio Dattoli.</Name>
+        <P>Developing high quality sofware </P>
+      </SubContainer>
+    </StyledContainer>
+  );
+}
+
+export default Home;
+
 const StyledContainer = styled.div`
   ${mixins.container}
 `;
@@ -74,17 +88,3 @@ const P = styled(Intro)`
     text-align: center;
   }
 `;
-
-function Home() {
-  return (
-    <StyledContainer>
-      <SubContainer>
-        <Intro>Hi, my name is</Intro>
-        <Name>Ramiro Fazio Dattoli.</Name>
-        <P>Developing high quality sofware </P>
-      </SubContainer>
-    </StyledContainer>
-  );
-}
-
-export default Home;

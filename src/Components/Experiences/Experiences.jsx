@@ -4,6 +4,32 @@ import Experience from "./Experience";
 import styled from "styled-components";
 import mixins from "../../styles/mixins";
 
+export default function Experiences() {
+  return (
+    <StyledContainer>
+      <StyledProjectContainer data-aos="zoom-in">
+        <H1 data-aos="fade-down">My Experience</H1>
+        <StyledP data-aos="fade-up">
+          These are some proyects that I worked on
+        </StyledP>
+        <StyledProjectSubContainer>
+          {experienceData.map((p, index) => {
+            return (
+              <Experience
+                key={index}
+                name={p.name}
+                description={p.description}
+                link={p.link}
+                usedTechnologies={p.usedTechnologies}
+              />
+            );
+          })}
+        </StyledProjectSubContainer>
+      </StyledProjectContainer>
+    </StyledContainer>
+  );
+}
+
 const StyledContainer = styled.div`
   ${mixins.container}
   height: 100%;
@@ -50,27 +76,3 @@ const StyledProjectSubContainer = styled.div`
     overflow-y: scroll;
   }
 `;
-
-export default function Experiences() {
-  return (
-    <StyledContainer>
-      <StyledProjectContainer>
-        <H1>My Experience</H1>
-        <StyledP>These are some proyects that I worked on</StyledP>
-        <StyledProjectSubContainer>
-          {experienceData.map((p, index) => {
-            return (
-              <Experience
-                key={index}
-                name={p.name}
-                description={p.description}
-                link={p.link}
-                usedTechnologies={p.usedTechnologies}
-              />
-            );
-          })}
-        </StyledProjectSubContainer>
-      </StyledProjectContainer>
-    </StyledContainer>
-  );
-}

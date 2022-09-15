@@ -3,6 +3,27 @@ import styled from "styled-components";
 import mixins from "../../styles/mixins";
 import IconGitHub from "../icons/github";
 
+function Experience({ name, description, link, usedTechnologies }) {
+  return (
+    <StyledContainer data-aos={window.innerWidth < 450 ? "none" : "fade-up"}>
+      <StyledSubContainer>
+        <StyledName>{name}</StyledName>
+        <StyledDescription>{description}</StyledDescription>
+      </StyledSubContainer>
+      <StyledTechnologiesContainer>
+        {usedTechnologies.map((technology) => (
+          <StyledTechnologies key={technology}>{technology}</StyledTechnologies>
+        ))}
+      </StyledTechnologiesContainer>
+      <StyledLink href={link} target="_blank" rel="noreferrer">
+        <IconGitHub />
+      </StyledLink>
+    </StyledContainer>
+  );
+}
+
+export default Experience;
+
 const StyledContainer = styled.div`
   ${mixins.container}
   flex: 1;
@@ -111,24 +132,3 @@ const StyledLink = styled.a`
   transition: all 1s ease;
   text-align: center;
 `;
-
-function Experience({ name, description, link, usedTechnologies }) {
-  return (
-    <StyledContainer>
-      <StyledSubContainer>
-        <StyledName>{name}</StyledName>
-        <StyledDescription>{description}</StyledDescription>
-      </StyledSubContainer>
-      <StyledTechnologiesContainer>
-        {usedTechnologies.map((technology) => (
-          <StyledTechnologies key={technology}>{technology}</StyledTechnologies>
-        ))}
-      </StyledTechnologiesContainer>
-      <StyledLink href={link} target="_blank" rel="noreferrer">
-        <IconGitHub />
-      </StyledLink>
-    </StyledContainer>
-  );
-}
-
-export default Experience;
