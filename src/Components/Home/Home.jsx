@@ -6,9 +6,13 @@ function Home() {
   return (
     <StyledContainer>
       <SubContainer>
-        <Intro>Hi, my name is</Intro>
+        {/* <Intro>Hi, my name is</Intro> */}
         <Name>Ramiro Fazio Dattoli.</Name>
-        <P>Developing high quality sofware </P>
+        {/* <P>Developing high quality sofware </P> */}
+        <Intro>LINK A MERCADO SHOPS</Intro>
+        <P href="https://ramirofazio.mercadoshops.com.ar" target="_blank">
+          ¡ACA!
+        </P>
       </SubContainer>
     </StyledContainer>
   );
@@ -41,6 +45,7 @@ const Intro = styled.h1`
   background: var(--baseTransparentColor);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
+  text-align: center;
 
   &:hover {
     cursor: default;
@@ -71,7 +76,7 @@ const Name = styled.h1`
   }
 `;
 
-const P = styled(Intro)`
+const P = styled.a`
   margin: 0;
   color: var(--primaryDarkColor);
   font-size: 2rem;
@@ -79,8 +84,16 @@ const P = styled(Intro)`
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
 
+  border: 1px solid var(--secondaryColor);
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none;
+
+  transition: all 0.5s ease;
+
   &:hover {
-    cursor: default;
+    color: black;
+    background-color: var(--primaryColor);
   }
 
   @media (max-width: 500px) {
